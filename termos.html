@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Termos de Uso · Valoro Invest</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data:; connect-src 'none';" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="DENY" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { overflow-x: hidden; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #374151;
+      background: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      overflow-x: hidden;
+    }
+
+    /* ── HEADER ── */
+    .header {
+      background: #fff;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,.08);
+      width: 100%;
+    }
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1496px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+    .logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+    .logo-valoro-img { height: 42px; width: auto; }
+    .logo-nord-img   { height: 50px; width: auto; }
+    .logo-divider    { width: 1px; height: 32px; background: #d5d9de; }
+    .nav-back {
+      color: #4a5568;
+      text-decoration: none;
+      font-size: .9rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      transition: color .2s;
+    }
+    .nav-back:hover { color: #1a4fa0; }
+
+    /* ── HERO ── */
+    .legal-hero {
+      background: linear-gradient(135deg, #0d1b2a 0%, #1a4fa0 100%);
+      padding: 3rem 0 2.5rem;
+      color: #fff;
+    }
+    .legal-hero-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+    .legal-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 20px;
+      padding: .35rem 1rem;
+      font-size: .8rem;
+      font-weight: 600;
+      color: #93c5fd;
+      margin-bottom: 1rem;
+    }
+    .legal-hero h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: .75rem;
+    }
+    .legal-hero-meta {
+      font-size: .85rem;
+      color: rgba(255,255,255,.65);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    .legal-hero-meta span { display: flex; align-items: center; gap: .4rem; }
+
+    /* ── LAYOUT ── */
+    .legal-layout {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2.5rem 48px 4rem;
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 2.5rem;
+      align-items: start;
+      flex: 1;
+    }
+
+    /* ── SUMÁRIO LATERAL ── */
+    .legal-toc {
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.06);
+      padding: 1.5rem;
+      position: sticky;
+      top: 90px;
+    }
+    .legal-toc h3 {
+      font-size: .8rem;
+      font-weight: 700;
+      color: #9ca3af;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+      margin-bottom: 1rem;
+    }
+    .toc-list { list-style: none; }
+    .toc-list li { margin-bottom: .3rem; }
+    .toc-list a {
+      font-size: .82rem;
+      color: #4a5568;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .3rem .5rem;
+      border-radius: 6px;
+      transition: background .15s, color .15s;
+      line-height: 1.35;
+    }
+    .toc-list a:hover { background: #eff6ff; color: #1a4fa0; }
+    .toc-num {
+      font-size: .7rem;
+      font-weight: 700;
+      color: #fff;
+      background: #1a4fa0;
+      border-radius: 4px;
+      min-width: 18px;
+      height: 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .toc-divider {
+      border: none;
+      border-top: 1px solid #e2e8f0;
+      margin: .75rem 0;
+    }
+    .toc-other-link {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .8rem;
+      color: #1a4fa0;
+      text-decoration: none;
+      padding: .4rem .5rem;
+      border-radius: 6px;
+      transition: background .15s;
+      font-weight: 500;
+    }
+    .toc-other-link:hover { background: #eff6ff; }
+
+    /* ── CONTEÚDO ── */
+    .legal-content {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,.07);
+      padding: 2.5rem 3rem;
+    }
+
+    .legal-section {
+      padding-bottom: 2rem;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    .legal-section:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .legal-section h2 {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #1a365d;
+      margin-bottom: 1rem;
+      scroll-margin-top: 90px;
+    }
+    .sec-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 28px;
+      height: 28px;
+      background: linear-gradient(135deg, #1a4fa0, #3b8fd4);
+      color: #fff;
+      font-size: .75rem;
+      font-weight: 700;
+      border-radius: 7px;
+      flex-shrink: 0;
+    }
+
+    .legal-section p {
+      font-size: .92rem;
+      line-height: 1.75;
+      color: #4a5568;
+      margin-bottom: .75rem;
+    }
+    .legal-section p:last-child { margin-bottom: 0; }
+
+    .legal-section ul, .legal-section ol {
+      padding-left: 1.5rem;
+      margin-bottom: .75rem;
+    }
+    .legal-section li {
+      font-size: .92rem;
+      line-height: 1.7;
+      color: #4a5568;
+      margin-bottom: .35rem;
+    }
+    .legal-section strong { color: #2d3748; }
+    .legal-section a { color: #3182ce; text-decoration: none; }
+    .legal-section a:hover { text-decoration: underline; }
+    .legal-section em { font-style: italic; }
+
+    /* Notices */
+    .lm-notice {
+      display: flex;
+      align-items: flex-start;
+      gap: .75rem;
+      padding: .85rem 1rem;
+      border-radius: 10px;
+      font-size: .85rem;
+      line-height: 1.55;
+      margin: .75rem 0;
+    }
+    .lm-notice i { margin-top: .1rem; flex-shrink: 0; font-size: .95rem; }
+    .lm-notice.info    { background: #eff6ff; color: #1e40af; }
+    .lm-notice.info i  { color: #3b82f6; }
+    .lm-notice.warning { background: #fffbeb; color: #92400e; }
+    .lm-notice.warning i { color: #d97706; }
+    .lm-notice.success { background: #f0fdf4; color: #14532d; }
+    .lm-notice.success i { color: #16a34a; }
+    .lm-notice.danger  { background: #fef2f2; color: #991b1b; }
+    .lm-notice.danger i { color: #dc2626; }
+
+    /* Box regulatório */
+    .lm-reg {
+      background: linear-gradient(135deg, #0d1b2a, #1a3a6b);
+      color: #fff;
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin: .75rem 0;
+      font-size: .88rem;
+      line-height: 1.65;
+    }
+    .lm-reg p { color: rgba(255,255,255,.85); margin-bottom: .5rem; }
+    .lm-reg p:last-child { margin-bottom: 0; }
+    .lm-reg strong { color: #fff; }
+    .lm-reg a { color: #93c5fd; }
+
+    /* ── CARD DE LINKS NO SUMÁRIO (desktop) ── */
+    .toc-links-card {
+      margin-top: 1rem;
+      padding: 1rem;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.06);
+      border: 1px solid #e2e8f0;
+      display: flex;
+      flex-direction: column;
+      gap: .25rem;
+    }
+
+    /* ── LINKS PRÉ-FOOTER ── */
+    .legal-footer-links {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 1.5rem 48px 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      border-top: 1px solid #e2e8f0;
+    }
+    .footer-links-divider {
+      width: 1px;
+      height: 1rem;
+      background: #cbd5e0;
+    }
+
+    /* ── FOOTER ── */
+    .footer-simple {
+      background: #1a365d;
+      padding: 1.5rem 0;
+      width: 100%;
+    }
+    .footer-simple-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1496px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+    .footer-logos { display: flex; align-items: center; gap: 14px; }
+    .footer-logos img { width: auto; filter: brightness(0) invert(1); opacity: .85; }
+    .footer-logo-valoro { height: 38px; }
+    .footer-logo-nord   { height: 48px; }
+    .footer-logos .fdivider { width: 1px; height: 26px; background: rgba(255,255,255,.3); }
+    .footer-copy { font-size: .82rem; color: rgba(255,255,255,.5); }
+    .footer-link { color: rgba(255,255,255,.6); text-decoration: none; font-size: .82rem; }
+    .footer-link:hover { color: #fff; }
+
+    /* ── RESPONSIVO ── */
+    @media (min-width: 901px) {
+      .legal-footer-links { display: none; }
+    }
+
+    @media (max-width: 900px) {
+      .legal-layout { grid-template-columns: 1fr; }
+      .legal-toc { position: static; }
+      .toc-links-card { display: none; }
+    }
+    @media (max-width: 600px) {
+      .legal-hero h1 { font-size: 1.6rem; }
+      .legal-content { background: transparent; box-shadow: none; border-radius: 0; padding: 0; }
+      .legal-toc { background: transparent; box-shadow: none; border-radius: 0; padding: 0; border-bottom: 1px solid #e2e8f0; padding-bottom: 1.25rem; margin-bottom: 1.25rem; }
+      .legal-section { border-bottom: 1px solid #e2e8f0; }
+      .footer-simple-content { flex-direction: column; gap: .75rem; text-align: center; }
+      .logo-valoro-img { height: 28px; }
+      .logo-nord-img   { height: 34px; }
+      .logo-divider    { height: 22px; }
+      .footer-logo-valoro { height: 28px; }
+      .footer-logo-nord   { height: 34px; }
+      .footer-copy { white-space: nowrap; font-size: 0.68rem; }
+      .legal-badge { white-space: nowrap; }
+      .legal-hero-meta { flex-direction: column; gap: .5rem; }
+      .legal-hero-meta span { white-space: nowrap; }
+      .legal-layout { padding: 1.5rem 1.25rem 3rem; }
+      .legal-footer-links { padding: 1.25rem 1.25rem 1.5rem; }
+    }
+    .whatsapp-fab {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 9999;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #25d366;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.75rem;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+    }
+    .whatsapp-fab:hover { transform: scale(1.1); box-shadow: 0 6px 22px rgba(0,0,0,0.32); }
+    @media (max-width: 480px) {
+      .whatsapp-fab { bottom: 20px; right: 16px; width: 50px; height: 50px; font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <nav class="nav-container">
+      <a href="index.html" class="logo">
+        <img src="Logos-Nord-Valoro/logo.png" alt="Valoro Invest" class="logo-valoro-img" />
+        <div class="logo-divider"></div>
+        <img src="Logos-Nord-Valoro/logo-nord.jpeg" alt="Nord Wealth" class="logo-nord-img" />
+      </a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <div class="legal-hero">
+    <div class="legal-hero-inner">
+      <div class="legal-badge"><i class="fas fa-file-contract"></i> Marco Civil · Lei nº 12.965/2014</div>
+      <h1>Termos de Uso</h1>
+      <div class="legal-hero-meta">
+        <span><i class="fas fa-calendar-alt"></i> Vigência: 14 de março de 2026</span>
+        <span><i class="fas fa-sync-alt"></i> Última atualização: 14 de março de 2026</span>
+        <span><i class="fas fa-list-ol"></i> 16 cláusulas</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTEÚDO -->
+  <div class="legal-layout">
+
+    <!-- SUMÁRIO -->
+    <aside class="legal-toc">
+      <h3>Sumário</h3>
+      <ul class="toc-list">
+        <li><a href="#s1"><span class="toc-num">1</span> Aceitação dos Termos</a></li>
+        <li><a href="#s2"><span class="toc-num">2</span> Identificação da Empresa</a></li>
+        <li><a href="#s3"><span class="toc-num">3</span> Natureza do Serviço</a></li>
+        <li><a href="#s4"><span class="toc-num">4</span> Aviso Regulatório CVM</a></li>
+        <li><a href="#s5"><span class="toc-num">5</span> Disclaimer de Investimentos</a></li>
+        <li><a href="#s6"><span class="toc-num">6</span> Uso Permitido</a></li>
+        <li><a href="#s7"><span class="toc-num">7</span> Condutas Proibidas</a></li>
+        <li><a href="#s8"><span class="toc-num">8</span> Propriedade Intelectual</a></li>
+        <li><a href="#s9"><span class="toc-num">9</span> Links Externos</a></li>
+        <li><a href="#s10"><span class="toc-num">10</span> Limitação de Responsabilidade</a></li>
+        <li><a href="#s11"><span class="toc-num">11</span> Disponibilidade do Site</a></li>
+        <li><a href="#s12"><span class="toc-num">12</span> Código ANBIMA</a></li>
+        <li><a href="#s13"><span class="toc-num">13</span> Conflito de Interesses</a></li>
+        <li><a href="#s14"><span class="toc-num">14</span> Privacidade e LGPD</a></li>
+        <li><a href="#s15"><span class="toc-num">15</span> Alterações dos Termos</a></li>
+        <li><a href="#s16"><span class="toc-num">16</span> Foro e Lei Aplicável</a></li>
+      </ul>
+
+      <div class="toc-links-card">
+        <a href="privacidade.html" class="toc-other-link">Política de Privacidade</a>
+        <a href="contato.html" class="toc-other-link">Formulário de contato</a>
+      </div>
+    </aside>
+
+    <!-- DOCUMENTO -->
+    <main class="legal-content">
+
+      <section class="legal-section" id="s1">
+        <h2><span class="sec-num">1</span> Aceitação dos Termos</h2>
+        <p>Ao acessar, navegar ou utilizar qualquer recurso do site <strong>valoroinvest.com.br</strong> e seus subdomínios (o <strong>"Site"</strong>), o usuário declara ter lido, compreendido e concordado integralmente com os presentes Termos de Uso, com a Política de Privacidade e com todas as normas legais e regulatórias aplicáveis à atividade de consultoria de investimentos no Brasil.</p>
+        <p>Caso o usuário não concorde com qualquer disposição destes Termos, deverá cessar imediatamente o uso do Site. O acesso continuado implica aceitação tácita de todas as condições aqui estabelecidas.</p>
+        <div class="lm-notice info"><i class="fas fa-info-circle"></i><span>Estes Termos constituem um contrato legal vinculante entre o usuário e a Valoro Invest, nos termos do art. 434 do Código Civil Brasileiro e do art. 7º do Marco Civil da Internet (Lei nº 12.965/2014).</span></div>
+      </section>
+
+      <section class="legal-section" id="s2">
+        <h2><span class="sec-num">2</span> Identificação da Empresa</h2>
+        <p>O Site é operado pela <strong>Valoro Invest Consultoria de Investimentos Ltda.</strong>, CNPJ 42.795.512/0001-31, com sede na Rua Place des Vosges, nº 88, Sala 206, Ville Sainte Hélène, Souzas, Campinas – SP, CEP 13105-825.</p>
+        <p>A Valoro Invest atua como <strong>escritório parceiro B2B</strong> da <strong>Nord Bankers Consultoria Ltda.</strong> (CNPJ 50.658.191/0001-51), entidade autorizada pela <strong>Comissão de Valores Mobiliários (CVM)</strong> para o exercício da atividade de Consultor de Valores Mobiliários Autônomo, na forma da Resolução CVM nº 19/2021.</p>
+        <p>Canal de atendimento: <a href="mailto:contato@valoroinvest.com.br">contato@valoroinvest.com.br</a><br><a href="tel:+5511993288109">(11) 99328-8109</a></p>
+      </section>
+
+      <section class="legal-section" id="s3">
+        <h2><span class="sec-num">3</span> Natureza do Serviço e do Site</h2>
+        <p>O Site tem finalidade <strong>exclusivamente informativa e institucional</strong>. Por meio dele, a Valoro Invest apresenta informações sobre seus serviços, disponibiliza canais de contato, publica conteúdo educacional e permite inscrição em newsletter.</p>
+        <p>O Site <strong>não constitui</strong> plataforma de negociação e não permite a realização de operações financeiras. Nenhuma transação ou contratação de serviços se aperfeiçoa exclusivamente por meio do Site, sendo sempre necessária a formalização por contrato escrito específico.</p>
+      </section>
+
+      <section class="legal-section" id="s4">
+        <h2><span class="sec-num">4</span> Aviso Regulatório — CVM</h2>
+        <div class="lm-reg">
+          <p><strong>Aviso Regulatório Obrigatório — CVM</strong></p>
+          <p>A <strong>Nord Bankers Consultoria Ltda.</strong> (CNPJ 50.658.191/0001-51), parceira da Valoro Invest, é autorizada pela CVM na categoria de Consultor de Valores Mobiliários, nos termos da Resolução CVM nº 19/2021.</p>
+          <p>Na condição de consultora de valores mobiliários, a Nord Bankers está proibida de receber qualquer remuneração ou benefício de terceiros em razão dos serviços prestados aos clientes, devendo toda remuneração recebida de emissores ou distribuidores ser integralmente repassada ao cliente (<em>cashback / rebate</em>), na forma do art. 16 da Resolução CVM nº 19/2021.</p>
+          <p>Os consultores de valores mobiliários não estão autorizados a administrar recursos de terceiros nem a custodiar ativos financeiros. Os ativos dos clientes permanecem sob custódia das instituições financeiras e corretoras parceiras, devidamente autorizadas pelo BACEN e pela CVM.</p>
+        </div>
+        <p>A verificação do registro da Nord Bankers pode ser realizada diretamente no <a href="https://www.cvm.gov.br" target="_blank" rel="noopener noreferrer">portal da CVM (cvm.gov.br)</a>.</p>
+      </section>
+
+      <section class="legal-section" id="s5">
+        <h2><span class="sec-num">5</span> Disclaimer de Investimentos e Conteúdo Educacional</h2>
+        <div class="lm-notice danger"><i class="fas fa-exclamation-circle"></i><span><strong>Aviso importante:</strong> Nenhum conteúdo publicado neste Site constitui recomendação de investimento, oferta de compra ou venda de valores mobiliários, ou aconselhamento jurídico ou tributário.</span></div>
+        <ul>
+          <li><strong>Rentabilidade passada não é garantia de rentabilidade futura.</strong></li>
+          <li><strong>Todo investimento envolve riscos</strong>, incluindo a possibilidade de perda total do capital investido.</li>
+          <li>Dados, estatísticas e projeções têm caráter meramente <strong>ilustrativo e educacional</strong>.</li>
+          <li>Recomendações personalizadas somente são fornecidas no contexto de um contrato de consultoria formalizado, após o processo de <em>suitability</em> (Resolução CVM nº 30/2021).</li>
+        </ul>
+        <p>As estatísticas exibidas no Site referem-se à atuação histórica da equipe e não constituem projeção de resultados futuros, em conformidade com o art. 15 da Resolução CVM nº 35/2021.</p>
+      </section>
+
+      <section class="legal-section" id="s6">
+        <h2><span class="sec-num">6</span> Uso Permitido do Site</h2>
+        <p>O acesso ao Site é gratuito. O usuário está autorizado a navegar para fins informativos, utilizar formulários de contato, inscrever-se na newsletter (com cancelamento a qualquer momento) e compartilhar links sem alterar o conteúdo original.</p>
+        <p>O uso pressupõe que o usuário seja maior de 18 anos, capaz civilmente, e forneça informações verdadeiras nos formulários.</p>
+      </section>
+
+      <section class="legal-section" id="s7">
+        <h2><span class="sec-num">7</span> Condutas Proibidas</h2>
+        <p>É expressamente vedado ao usuário:</p>
+        <ul>
+          <li>Reproduzir ou explorar comercialmente o conteúdo sem autorização prévia e por escrito;</li>
+          <li>Utilizar técnicas de <em>scraping</em> ou robôs para coleta automática de dados;</li>
+          <li>Tentar acessar sistemas internos sem autorização;</li>
+          <li>Inserir vírus, malware ou quaisquer códigos maliciosos;</li>
+          <li>Praticar fraude ou uso de identidade falsa nos formulários;</li>
+          <li>Disseminar spam ou conteúdo ofensivo por meio dos canais de contato;</li>
+          <li>Realizar qualquer conduta que viole a legislação brasileira, incluindo o Marco Civil da Internet (Lei nº 12.965/2014).</li>
+        </ul>
+        <p>O descumprimento pode ensejar responsabilização civil e criminal e a adoção imediata de medidas legais pela Valoro Invest.</p>
+      </section>
+
+      <section class="legal-section" id="s8">
+        <h2><span class="sec-num">8</span> Propriedade Intelectual</h2>
+        <p>Todo o conteúdo do Site — textos, logotipos, marcas, design, fotografias, vídeos e código-fonte — é de propriedade exclusiva da Valoro Invest ou de seus licenciantes, protegido pela Lei nº 9.279/1996 e Lei nº 9.610/1998. O acesso ao Site não confere nenhuma licença sobre esses ativos além do estritamente necessário para a navegação.</p>
+        <p>As marcas de instituições parceiras (XP, BTG Pactual, Safra, Avenue Securities, Interactive Brokers, Morgan Stanley, Órama, Banco Inter, Nord Bankers) pertencem a seus respectivos titulares e foram utilizadas apenas para fins informativos.</p>
+      </section>
+
+      <section class="legal-section" id="s9">
+        <h2><span class="sec-num">9</span> Links para Sites e Plataformas Externas</h2>
+        <p>O Site pode conter links para sites e plataformas de terceiros. Esses links são fornecidos para conveniência e <strong>não implicam responsabilidade da Valoro Invest</strong> pelo conteúdo ou práticas desses terceiros. Ao acessar links externos, o usuário estará sujeito aos termos dos respectivos sites.</p>
+      </section>
+
+      <section class="legal-section" id="s10">
+        <h2><span class="sec-num">10</span> Limitação de Responsabilidade</h2>
+        <p>Na máxima extensão permitida pela legislação, a Valoro Invest <strong>não se responsabiliza</strong> por:</p>
+        <ul>
+          <li>Decisões de investimento tomadas com base no conteúdo informativo do Site sem formalização de contrato de consultoria;</li>
+          <li>Perdas financeiras decorrentes do uso do Site;</li>
+          <li>Falhas técnicas ou interrupções;</li>
+          <li>Conteúdo de sites de terceiros;</li>
+          <li>Informações desatualizadas de natureza dinâmica.</li>
+        </ul>
+        <div class="lm-notice warning"><i class="fas fa-balance-scale"></i><span>As limitações não excluem a responsabilidade em casos de dolo, culpa grave ou violação de direitos do consumidor (CDC, Lei nº 8.078/1990), quando aplicável.</span></div>
+      </section>
+
+      <section class="legal-section" id="s11">
+        <h2><span class="sec-num">11</span> Disponibilidade e Manutenção do Site</h2>
+        <p>A Valoro Invest <strong>não garante a disponibilidade ininterrupta</strong> do Site, que pode estar sujeito a interrupções programadas para manutenção, falhas de infraestrutura de terceiros ou eventos de força maior (art. 393 do Código Civil). Interrupções planejadas de longa duração serão comunicadas previamente.</p>
+      </section>
+
+      <section class="legal-section" id="s12">
+        <h2><span class="sec-num">12</span> Código de Conduta ANBIMA e Autorregulação</h2>
+        <p>A Nord Bankers Consultoria Ltda. é associada à <strong>ANBIMA</strong>, sujeitando-se ao Código de Conduta Profissional e Ética, ao Código de Administração de Recursos de Terceiros e ao Código de Distribuição de Produtos de Investimento. Em caso de reclamações, os clientes podem acionar a ANBIMA em <a href="https://www.anbima.com.br" target="_blank" rel="noopener noreferrer">anbima.com.br</a> e a CVM em <a href="https://www.cvm.gov.br" target="_blank" rel="noopener noreferrer">cvm.gov.br</a>.</p>
+      </section>
+
+      <section class="legal-section" id="s13">
+        <h2><span class="sec-num">13</span> Política de Conflito de Interesses</h2>
+        <p>A remuneração da consultoria provém <strong>exclusivamente de honorários pagos pelos clientes</strong>. É vedado receber comissões ou benefícios de emissores ou distribuidores (art. 16, Res. CVM 19/2021). Eventuais comissões recebidas de corretoras parceiras são integralmente devolvidas ao cliente na forma de <strong>cashback/rebate</strong>. Situações de potencial conflito são identificadas, comunicadas e gerenciadas com primazia ao interesse do cliente.</p>
+        <div class="lm-notice success"><i class="fas fa-handshake"></i><span>O modelo de consultoria independente é fiscalizado pela CVM. Suspeitas de conflito podem ser reportadas em <a href="https://www.cvm.gov.br" target="_blank" rel="noopener noreferrer">cvm.gov.br</a>.</span></div>
+      </section>
+
+      <section class="legal-section" id="s14">
+        <h2><span class="sec-num">14</span> Privacidade e Proteção de Dados (LGPD)</h2>
+        <p>O tratamento de dados pessoais dos usuários é regido pela <strong><a href="privacidade.html">Política de Privacidade da Valoro Invest</a></strong>, em conformidade com a LGPD (Lei nº 13.709/2018). Ao utilizar os formulários do Site, o usuário consente com o tratamento dos dados conforme descrito na Política. Dados de clientes relativos ao relacionamento de consultoria são protegidos pelo sigilo financeiro (Lei Complementar nº 105/2001).</p>
+      </section>
+
+      <section class="legal-section" id="s15">
+        <h2><span class="sec-num">15</span> Alterações dos Termos de Uso</h2>
+        <p>A Valoro Invest reserva-se o direito de modificar estes Termos a qualquer tempo. Alterações <strong>materiais</strong> serão comunicadas com antecedência mínima de <strong>15 dias corridos</strong> por aviso no Site ou por e-mail. O uso continuado após as alterações implica sua aceitação tácita.</p>
+      </section>
+
+      <section class="legal-section" id="s16">
+        <h2><span class="sec-num">16</span> Foro, Lei Aplicável e Resolução de Conflitos</h2>
+        <p>Estes Termos são regidos pelas <strong>leis da República Federativa do Brasil</strong>. Fica eleito o <strong>Foro da Comarca de Campinas, Estado de São Paulo</strong>, com renúncia a qualquer outro. As partes comprometem-se a buscar solução amigável antes de recorrer ao Poder Judiciário, por meio de contato direto com a Valoro Invest, Ouvidoria da Nord Bankers, ANBIMA ou CVM. Para questões de proteção de dados, o usuário pode acionar a ANPD (art. 55-A da LGPD).</p>
+      </section>
+
+    </main>
+  </div>
+
+  <div class="legal-footer-links">
+    <a href="privacidade.html" class="toc-other-link">Política de Privacidade</a>
+    <span class="footer-links-divider"></span>
+    <a href="contato.html" class="toc-other-link">Formulário de contato</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer-simple">
+    <div class="footer-simple-content">
+      <div class="footer-logos">
+        <img src="Logos-Nord-Valoro/logo-valoro-branco.png" alt="Valoro Invest" class="footer-logo-valoro" />
+        <div class="fdivider"></div>
+        <img src="Logos-Nord-Valoro/logo-nord-branco.png" alt="Nord Wealth" class="footer-logo-nord" />
+      </div>
+      <p class="footer-copy">© 2026 Valoro Invest. Todos os direitos reservados.</p>
+      <a href="index.html" class="footer-link">Voltar ao site</a>
+    </div>
+  </footer>
+
+  <!-- ── BOTÃO FLUTUANTE WHATSAPP ── -->
+  <a href="https://wa.me/5511993288109" target="_blank" rel="noopener noreferrer" class="whatsapp-fab" aria-label="Falar pelo WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script src="js/scroll-restore.js"></script>
+  <script src="js/cookie-consent.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,2773 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Valoro Invest</title>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data:; connect-src https://script.google.com;" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="DENY" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f5f5f5;
+    }
+
+    section[id] {
+      scroll-margin-top: 80px;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e8e8e8;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    .header-inner {
+      width: 100%;
+      max-width: 1496px;
+      margin: 0 auto;
+      padding: 0 48px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    /* ── LOGO ── */
+    .logos {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-shrink: 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .logo img {
+      height: 46px;
+      width: auto;
+      display: block;
+    }
+
+    .logo-nord img {
+      height: 58px;
+    }
+
+    .logos-divider {
+      width: 1px;
+      height: 40px;
+      background: #d5d9de;
+      flex-shrink: 0;
+    }
+
+    /* ── NAV ── */
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-left: auto;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #2d3a47;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 8px 14px;
+      border-radius: 6px;
+      transition: color 0.2s, background 0.2s;
+      white-space: nowrap;
+    }
+
+    nav a:hover {
+      color: #1a4fa0;
+      background: #eef3fb;
+    }
+
+    nav a.active {
+      color: #1a4fa0;
+      font-weight: 600;
+    }
+
+    /* ── NAV DROPDOWN ── */
+    .nav-dropdown {
+      position: relative;
+    }
+
+    .nav-dropdown-toggle {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: #2d3a47;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 8px 14px;
+      border-radius: 6px;
+      transition: color 0.2s, background 0.2s;
+      white-space: nowrap;
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: inherit;
+    }
+
+    .nav-dropdown-toggle:hover,
+    .nav-dropdown:hover .nav-dropdown-toggle {
+      color: #1a4fa0;
+      background: #eef3fb;
+    }
+
+    .nav-dropdown-toggle i {
+      font-size: 11px;
+      transition: transform 0.2s;
+    }
+
+    .nav-dropdown:hover .nav-dropdown-toggle i {
+      transform: rotate(180deg);
+    }
+
+    .nav-dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      padding-top: 6px;
+      background: transparent;
+      min-width: 210px;
+      z-index: 200;
+    }
+
+    .nav-dropdown:hover .nav-dropdown-menu {
+      display: block;
+    }
+
+    .nav-dropdown-menu-inner {
+      background: #ffffff;
+      border: 1px solid #e8e8e8;
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
+      overflow: hidden;
+    }
+
+    .nav-dropdown-menu a {
+      display: block;
+      padding: 12px 18px;
+      color: #2d3a47;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      border-radius: 0;
+      transition: background 0.15s, color 0.15s;
+      white-space: nowrap;
+    }
+
+    .nav-dropdown-menu a:hover {
+      background: #eef3fb;
+      color: #1a4fa0;
+    }
+
+    /* ── CTA BUTTON ── */
+    .btn-cta {
+      flex-shrink: 0;
+      background: linear-gradient(135deg, #5aafe8 0%, #3b8fd4 100%);
+      color: #ffffff !important;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 14px 36px;
+      border-radius: 50px;
+      text-decoration: none;
+      white-space: nowrap;
+      box-shadow: 0 8px 28px rgba(59, 143, 212, 0.45);
+      transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+    }
+
+    .btn-cta:hover {
+      background: linear-gradient(135deg, #72bfee 0%, #4fa3e0 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 36px rgba(59, 143, 212, 0.55);
+    }
+
+    .btn-cta:active {
+      transform: translateY(0);
+    }
+
+    /* ── HERO SLIDER ── */
+    .hero-section {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 1667 / 417;
+      min-height: 320px;
+      max-height: 520px;
+    }
+
+    .hero-track {
+      display: flex;
+      height: 100%;
+      transition: transform 0.75s cubic-bezier(0.4, 0, 0.2, 1);
+      will-change: transform;
+    }
+
+    .hero-slide {
+      min-width: 100%;
+      flex-shrink: 0;
+      height: 100%;
+      position: relative;
+    }
+
+    .hero-slide-1 {
+      padding: 1.25rem 90px;
+      background: linear-gradient(160deg, #0d1b2a 0%, #1a2e4a 60%, #1e3a5f 100%);
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-slide-1::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 50%, rgba(66,153,225,0.12) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+
+    .hero-content {
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ── coluna esquerda ── */
+    .hero-left {
+      flex: 1.4;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .hero-title {
+      margin-bottom: 0.75rem;
+      line-height: 1.1;
+    }
+
+    .hero-title-main {
+      display: block;
+      font-size: 2.3rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.25rem;
+      letter-spacing: -0.5px;
+    }
+
+    .hero-title-accent {
+      display: block;
+      font-size: 2.9rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #63b3ed 0%, #4299e1 50%, #3182ce 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -1px;
+    }
+
+    .hero-description {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.80);
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+      max-width: 460px;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      background: linear-gradient(135deg, #5aafe8 0%, #3b8fd4 100%);
+      color: #ffffff;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 11px 30px;
+      border-radius: 50px;
+      text-decoration: none;
+      white-space: nowrap;
+      box-shadow: 0 6px 20px rgba(59, 143, 212, 0.45);
+      transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+    }
+
+    .hero-cta:hover {
+      background: linear-gradient(135deg, #72bfee 0%, #4fa3e0 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(59, 143, 212, 0.55);
+    }
+
+    .hero-cta:active {
+      transform: translateY(0);
+    }
+
+    /* ── coluna direita: cards 2×2 ── */
+    .hero-right {
+      flex: 0.9;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1.1rem 1.1rem;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.14);
+      backdrop-filter: blur(12px);
+      text-align: center;
+      transition: background 0.3s, transform 0.3s;
+      animation: fadeInUp 0.9s ease both;
+    }
+
+    .stat-item:hover {
+      background: rgba(255,255,255,0.12);
+      transform: translateY(-3px);
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .stat-number {
+      font-size: 1.85rem;
+      font-weight: 900;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+      margin-bottom: 0.35rem;
+      line-height: 1.1;
+    }
+
+    .stat-label {
+      font-size: 0.87rem;
+      color: rgba(255,255,255,0.75);
+      font-weight: 500;
+      line-height: 1.3;
+    }
+
+    /* ── INSTITUIÇÕES PARCEIRAS ── */
+    .parceiras-section {
+      padding: 2.5rem 0 3rem;
+      background: linear-gradient(160deg, #0d1b2a 0%, #1a2e4a 60%, #1e3a5f 100%);
+      overflow: hidden;
+    }
+
+    .parceiras-title {
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 2rem;
+    }
+
+    .parceiras-track-wrap {
+      display: flex;
+      width: 100%;
+      overflow: hidden;
+      mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    }
+
+    .parceiras-track {
+      display: flex;
+      align-items: center;
+      gap: 4.5rem;
+      animation: scroll-logos 28s linear infinite;
+      will-change: transform;
+    }
+
+    .parceiras-track:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes scroll-logos {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    .parceiras-track img {
+      height: 88px;
+      width: auto;
+      object-fit: contain;
+      opacity: 0.8;
+      transition: opacity 0.3s;
+      flex-shrink: 0;
+    }
+
+    .parceiras-track img:hover {
+      opacity: 1;
+    }
+
+    /* ── SOBRE NÓS ── */
+    .sobre-section {
+      padding: 6rem 48px;
+      background: #ffffff;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    .sobre-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #1a365d;
+      text-align: center;
+      letter-spacing: -0.5px;
+      position: relative;
+      margin-bottom: 1rem;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      margin: 1rem auto 0;
+      width: 72px;
+      height: 4px;
+      background: linear-gradient(90deg, #4299e1, #3182ce);
+      border-radius: 2px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      font-size: 1.1rem;
+      color: #3182ce;
+      font-weight: 600;
+      margin-top: 1.75rem;
+      margin-bottom: 2.75rem;
+    }
+
+    .sobre-texto {
+      font-size: 1.05rem;
+      line-height: 1.9;
+      color: #4a5568;
+      margin-bottom: 1.25rem;
+    }
+
+    .sobre-texto:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .sobre-logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+      margin-top: 3.5rem;
+      padding-top: 3rem;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    .sobre-logos img {
+      width: auto;
+      object-fit: contain;
+      transition: transform 0.3s;
+    }
+
+    /* ── MISSÃO, VISÃO E VALORES ── */
+    .missao-section {
+      padding: 6rem 48px;
+      background: #ffffff;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    .missao-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .missao-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3.5rem;
+    }
+
+    .missao-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .missao-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(26, 79, 160, 0.10);
+      border-color: #bdd3f5;
+    }
+
+    .missao-icon {
+      width: 68px;
+      height: 68px;
+      background: linear-gradient(135deg, #1a4fa0, #3182ce);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      box-shadow: 0 8px 20px rgba(26, 79, 160, 0.25);
+    }
+
+    .missao-icon i {
+      font-size: 1.6rem;
+      color: #ffffff;
+    }
+
+    .missao-card-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #1a365d;
+      margin-bottom: 1rem;
+    }
+
+    .missao-card-text {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #4a5568;
+    }
+
+    .missao-card-text strong {
+      color: #1a365d;
+    }
+
+    /* ── NOSSAS SOLUÇÕES ── */
+    .solucoes-section {
+      padding: 6rem 48px;
+      background: #ffffff;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    .solucoes-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .section-title-light {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #1a365d;
+      text-align: center;
+      letter-spacing: -0.5px;
+      position: relative;
+      margin-bottom: 1rem;
+    }
+
+    .section-title-light::after {
+      content: '';
+      display: block;
+      margin: 1rem auto 0;
+      width: 72px;
+      height: 4px;
+      background: linear-gradient(90deg, #4299e1, #3182ce);
+      border-radius: 2px;
+    }
+
+    .solucoes-subtitle {
+      text-align: center;
+      font-size: 1rem;
+      color: #718096;
+      margin-top: 1.5rem;
+      margin-bottom: 4rem;
+    }
+
+    .solucoes-layout {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    /* ── roda SVG ── */
+    .wheel-wrap {
+      position: relative;
+      width: 580px;
+      height: 580px;
+      justify-self: center;
+      overflow: visible;
+    }
+
+    .wheel-svg {
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+
+    .wheel-seg {
+      fill: #eef4fd;
+      stroke: #bdd3f5;
+      stroke-width: 1.5;
+      transition: fill 0.2s, stroke 0.2s;
+    }
+
+    .wheel-seg:hover {
+      fill: #dbeafe;
+      stroke: #4299e1;
+    }
+
+    .wheel-seg.active {
+      fill: url(#segGrad);
+      stroke: none;
+    }
+
+    .wheel-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 10.5px;
+      font-weight: 500;
+      fill: #4a5568;
+      cursor: pointer;
+      transition: fill 0.2s;
+      pointer-events: all;
+    }
+
+    .wheel-label.active {
+      fill: #1a4fa0;
+      font-weight: 700;
+    }
+
+    .wheel-label:hover {
+      fill: #2b6cb0;
+    }
+
+    /* ── painel ── */
+    .solucoes-panel {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      min-height: 380px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: opacity 0.25s ease;
+    }
+
+    .panel-counter {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #3182ce;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .panel-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #1a365d;
+      margin-bottom: 1rem;
+      letter-spacing: -0.3px;
+    }
+
+    .panel-divider {
+      width: 44px;
+      height: 3px;
+      background: linear-gradient(90deg, #4299e1, #3182ce);
+      border-radius: 2px;
+      margin-bottom: 1.25rem;
+    }
+
+    .panel-desc {
+      font-size: 0.95rem;
+      color: #4a5568;
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+    }
+
+    .panel-bullets {
+      list-style: none;
+      margin-bottom: 1.75rem;
+    }
+
+    .panel-bullets li {
+      font-size: 0.88rem;
+      color: #4a5568;
+      padding: 0.3rem 0 0.3rem 1.2rem;
+      position: relative;
+    }
+
+    .panel-bullets li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 6px;
+      height: 6px;
+      background: #3182ce;
+      border-radius: 50%;
+    }
+
+    .panel-cta-sol {
+      display: inline-block;
+      background: linear-gradient(135deg, #5aafe8, #3b8fd4);
+      color: #ffffff;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 12px 28px;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 6px 20px rgba(59,143,212,0.30);
+      transition: transform 0.2s, box-shadow 0.2s;
+      align-self: flex-start;
+    }
+
+    .panel-cta-sol:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(59,143,212,0.45);
+    }
+
+    /* ── NOSSOS CONSULTORES ── */
+    .consultores-section {
+      padding: 6rem 48px;
+      background: linear-gradient(160deg, #0d1b2a 0%, #1a2e4a 60%, #1e3a5f 100%);
+    }
+
+    .consultores-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .section-title-white {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #ffffff;
+      text-align: center;
+      letter-spacing: -0.5px;
+      position: relative;
+      margin-bottom: 1rem;
+    }
+
+    .section-title-white::after {
+      content: '';
+      display: block;
+      margin: 1rem auto 0;
+      width: 72px;
+      height: 4px;
+      background: linear-gradient(90deg, #5aafe8, #3b8fd4);
+      border-radius: 2px;
+    }
+
+    .consultores-subtitle {
+      text-align: center;
+      font-size: 1rem;
+      color: rgba(255,255,255,0.55);
+      margin-top: 1.5rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .consultores-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .consultor-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+    }
+
+    .consultor-card:hover {
+      transform: translateY(-6px);
+      background: rgba(255,255,255,0.09);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+    }
+
+    .consultor-photo {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      margin: 0 auto 1.5rem;
+      border: 3px solid rgba(90,175,232,0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .consultor-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .consultor-photo i {
+      font-size: 3rem;
+      color: rgba(255,255,255,0.25);
+    }
+
+    .consultor-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.85rem;
+      letter-spacing: -0.2px;
+    }
+
+    .consultor-certs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .cert-badge {
+      background: rgba(59,143,212,0.18);
+      border: 1px solid rgba(90,175,232,0.38);
+      color: #7ec8f0;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 4px 11px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+
+    .consultor-location {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      color: rgba(255,255,255,0.45);
+      font-size: 0.85rem;
+    }
+
+    .consultor-location i {
+      color: #5aafe8;
+      font-size: 0.78rem;
+    }
+
+    /* ── FAQ ── */
+    .faq-section {
+      padding: 6rem 48px;
+      background: #ffffff;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    .faq-inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .faq-subtitle {
+      text-align: center;
+      font-size: 1rem;
+      color: #718096;
+      margin-top: 1.5rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .faq-item {
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      overflow: hidden;
+      transition: box-shadow 0.25s;
+    }
+
+    .faq-item.open {
+      box-shadow: 0 4px 20px rgba(26,79,160,0.08);
+      border-color: #bdd3f5;
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.25rem 1.5rem;
+      cursor: pointer;
+      text-align: left;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #1a365d;
+      transition: color 0.2s;
+    }
+
+    .faq-question:hover {
+      color: #1a4fa0;
+    }
+
+    .faq-item.open .faq-question {
+      color: #1a4fa0;
+    }
+
+    .faq-icon {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #eef4fd;
+      border: 1px solid #bdd3f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s, background 0.2s;
+    }
+
+    .faq-item.open .faq-icon {
+      background: linear-gradient(135deg, #1a4fa0, #3182ce);
+      border-color: #1a4fa0;
+      transform: rotate(45deg);
+    }
+
+    .faq-icon i {
+      font-size: 0.75rem;
+      color: #3182ce;
+      transition: color 0.2s;
+    }
+
+    .faq-item.open .faq-icon i {
+      color: #ffffff;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+      padding: 0 1.5rem;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 400px;
+      padding: 0 1.5rem 1.5rem;
+    }
+
+    .faq-answer p {
+      font-size: 0.95rem;
+      color: #4a5568;
+      line-height: 1.8;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 1.1rem;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: linear-gradient(160deg, #0a1628 0%, #0d1b2a 100%);
+      padding: 4rem 48px 2rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .footer-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1.2fr;
+      gap: 4rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .footer-logos {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-logos img {
+      width: auto;
+      object-fit: contain;
+    }
+
+    .footer-logo-valoro {
+      height: 38px;
+    }
+
+    .footer-logo-nord {
+      height: 48px;
+    }
+
+    .footer-logos-divider {
+      width: 1px;
+      height: 32px;
+      background: rgba(255,255,255,0.2);
+    }
+
+    .footer-desc {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.8;
+      margin-bottom: 1.75rem;
+      max-width: 340px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .footer-social a {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+    }
+
+    .footer-social a:hover {
+      background: rgba(90,175,232,0.18);
+      border-color: rgba(90,175,232,0.5);
+      color: #5aafe8;
+    }
+
+    .footer-col-title {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .footer-links a {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: #5aafe8;
+    }
+
+    .footer-contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+    }
+
+    .footer-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+    }
+
+    .footer-contact-item i {
+      color: #5aafe8;
+      font-size: 0.95rem;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .footer-contact-item span,
+    .footer-contact-item a {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.6;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-contact-item a:hover {
+      color: #5aafe8;
+    }
+
+    .footer-bottom {
+      padding-top: 1.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .footer-copy {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.28);
+    }
+
+    .footer-copy span {
+      color: rgba(255,255,255,0.45);
+    }
+
+    /* ── MODAIS LEGAIS ── */
+    .legal-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 2rem 1rem;
+      overflow-y: auto;
+    }
+
+    .legal-modal.open { display: flex; }
+
+    .legal-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(10,22,40,0.82);
+      backdrop-filter: blur(4px);
+    }
+
+    .legal-modal-box {
+      position: relative;
+      background: #fff;
+      border-radius: 16px;
+      max-width: 860px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.45);
+      z-index: 1;
+      margin: auto;
+    }
+
+    .legal-modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid #e2e8f0;
+      flex-shrink: 0;
+    }
+
+    .legal-modal-header h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #1a365d;
+    }
+
+    .legal-modal-meta {
+      font-size: 0.78rem;
+      color: #718096;
+      margin-top: 0.25rem;
+    }
+
+    .legal-modal-close {
+      width: 36px;
+      height: 36px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      border: 1px solid #e2e8f0;
+      background: #f8fafc;
+      font-size: 1.1rem;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #718096;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .legal-modal-close:hover {
+      background: #fee2e2;
+      border-color: #fca5a5;
+      color: #e53e3e;
+    }
+
+    .legal-modal-body {
+      overflow-y: auto;
+      padding: 2rem;
+      max-height: calc(100vh - 10rem);
+    }
+
+    .legal-modal-body section {
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid #f0f4f8;
+    }
+
+    .legal-modal-body section:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .legal-modal-body h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #1a365d;
+      margin-bottom: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .lm-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+      background: linear-gradient(135deg, #1a4fa0, #3182ce);
+      color: #fff;
+      font-size: 0.68rem;
+      font-weight: 700;
+      border-radius: 5px;
+    }
+
+    .legal-modal-body p {
+      font-size: 0.875rem;
+      color: #4a5568;
+      line-height: 1.8;
+      margin-bottom: 0.75rem;
+    }
+
+    .legal-modal-body p:last-child { margin-bottom: 0; }
+
+    .legal-modal-body ul,
+    .legal-modal-body ol {
+      padding-left: 1.4rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .legal-modal-body li {
+      font-size: 0.875rem;
+      color: #4a5568;
+      line-height: 1.8;
+      margin-bottom: 0.25rem;
+    }
+
+    .legal-modal-body strong { color: #2d3748; }
+
+    .legal-modal-body a {
+      color: #3182ce;
+      text-decoration: none;
+    }
+
+    .legal-modal-body a:hover { text-decoration: underline; }
+
+    .lm-notice {
+      border-radius: 8px;
+      padding: 0.9rem 1.1rem;
+      margin: 0.9rem 0;
+      font-size: 0.84rem;
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+      line-height: 1.7;
+    }
+
+    .lm-notice i { flex-shrink: 0; margin-top: 0.15rem; }
+    .lm-notice.info { background: #ebf8ff; border-left: 3px solid #3182ce; color: #2c5282; }
+    .lm-notice.warning { background: #fffbeb; border-left: 3px solid #d97706; color: #744210; }
+    .lm-notice.danger { background: #fff5f5; border-left: 3px solid #e53e3e; color: #742a2a; }
+    .lm-notice.success { background: #f0fff4; border-left: 3px solid #38a169; color: #276749; }
+
+    .lm-reg {
+      background: linear-gradient(135deg, #1a365d 0%, #2d5a87 100%);
+      color: #fff;
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin: 1rem 0;
+      font-size: 0.84rem;
+      line-height: 1.7;
+    }
+
+    .lm-reg p { color: rgba(255,255,255,0.92); margin-bottom: 0.5rem; font-size: 0.84rem; }
+    .lm-reg p:last-child { margin-bottom: 0; }
+    .lm-reg strong { color: #fff; }
+
+    .legal-modal-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0.75rem 0;
+      font-size: 0.82rem;
+    }
+
+    .legal-modal-body th {
+      background: #f7fafc;
+      color: #2d3748;
+      font-weight: 600;
+      padding: 0.6rem 0.85rem;
+      text-align: left;
+      border: 1px solid #e2e8f0;
+    }
+
+    .legal-modal-body td {
+      padding: 0.55rem 0.85rem;
+      border: 1px solid #e2e8f0;
+      color: #4a5568;
+      vertical-align: top;
+      line-height: 1.6;
+    }
+
+    .legal-modal-body tr:nth-child(even) td { background: #f8fafc; }
+
+    .footer-legal-link {
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      transition: color 0.2s;
+      font-size: 0.8rem;
+    }
+
+    .footer-legal-link:hover { color: #5aafe8; }
+
+    .sobre-logos .logo-valoro {
+      height: 46px;
+    }
+
+    .sobre-logos .logo-nord {
+      height: 58px;
+    }
+
+    .sobre-logos img:hover {
+      transform: translateY(-3px);
+    }
+
+    /* Impede rolagem horizontal em qualquer largura de tela */
+    html { overflow-x: clip; }
+
+    /* ── ELEMENTOS APENAS MOBILE (escondidos no desktop) ── */
+    .nav-hamburger        { display: none; }
+    .nav-overlay          { display: none; }
+    .solucoes-mobile-list { display: none; }
+    .parceiras-mobile     { display: none; }
+    .missao-carousel-wrap { display: contents; } /* transparente no desktop */
+    .missao-arrow         { display: none; }
+
+    /* ── ACORDEÃO MOBILE SOLUÇÕES (estilos sem media query pois são criados via JS) ── */
+    .sol-mobile-item {
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      overflow: hidden;
+      transition: box-shadow 0.25s;
+    }
+    .sol-mobile-item.open {
+      border-color: #bdd3f5;
+      box-shadow: 0 4px 16px rgba(26,79,160,0.08);
+    }
+    .sol-mobile-toggle {
+      width: 100%;
+      background: #ffffff;
+      border: none;
+      padding: 1.1rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #1a365d;
+      text-align: left;
+      transition: background 0.2s, color 0.2s;
+    }
+    .sol-mobile-toggle:hover,
+    .sol-mobile-item.open .sol-mobile-toggle {
+      background: #eef4fd;
+      color: #1a4fa0;
+    }
+    .sol-mobile-toggle i {
+      font-size: 0.75rem;
+      color: #3182ce;
+      flex-shrink: 0;
+      transition: transform 0.3s;
+    }
+    .sol-mobile-item.open .sol-mobile-toggle i { transform: rotate(180deg); }
+    .sol-mobile-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+      padding: 0 1.25rem;
+      background: #f8fafc;
+      border-top: 1px solid transparent;
+    }
+    .sol-mobile-item.open .sol-mobile-body {
+      max-height: 500px;
+      padding: 1rem 1.25rem 1.25rem;
+      border-top-color: #e2e8f0;
+    }
+    .sol-mobile-body p {
+      font-size: 0.9rem;
+      color: #4a5568;
+      line-height: 1.7;
+      margin-bottom: 0.85rem;
+    }
+    .sol-mobile-body ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .sol-mobile-body li {
+      font-size: 0.85rem;
+      color: #4a5568;
+      padding-left: 1.1rem;
+      position: relative;
+      line-height: 1.5;
+    }
+    .sol-mobile-body li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.5em;
+      width: 5px;
+      height: 5px;
+      background: #3182ce;
+      border-radius: 50%;
+    }
+    .sol-mobile-cta {
+      display: inline-block;
+      margin-top: 1rem;
+      background: linear-gradient(135deg, #5aafe8, #3b8fd4);
+      color: #ffffff;
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 10px 22px;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(59,143,212,0.30);
+    }
+
+    /* Imagens nunca ultrapassam o container */
+    img { max-width: 100%; height: auto; }
+
+    /* ════════════════════════════════════════
+       RESPONSIVO — TABLET  (≤ 900px)
+       ════════════════════════════════════════ */
+    @media (max-width: 900px) {
+      .header-inner { padding: 0 28px; gap: 16px; }
+      .btn-cta { padding: 11px 22px; font-size: 0.9rem; }
+      .missao-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+    }
+
+    /* ════════════════════════════════════════
+       RESPONSIVO — MOBILE  (≤ 768px)
+       ════════════════════════════════════════ */
+    @media (max-width: 768px) {
+
+      /* ── Header ── */
+      .header-inner {
+        padding: 0 16px;
+        height: 60px;
+        gap: 0;
+      }
+      .logo img      { height: 24px; }
+      .logo-nord img { height: 30px; }
+      .logos-divider { height: 18px; }
+      .logos         { gap: 10px; }
+
+      /* Esconde CTA do header */
+      .btn-cta { display: none; }
+
+      /* Hamburger visível */
+      .nav-hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 6px;
+        margin-left: auto;
+        z-index: 201;
+        flex-shrink: 0;
+      }
+      .nav-hamburger span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: #2d3a47;
+        border-radius: 2px;
+        transition: transform 0.3s, opacity 0.3s;
+        transform-origin: center;
+      }
+      .nav-hamburger.open span:nth-child(1) { transform: translateY(7px)  rotate(45deg);  }
+      .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0);           }
+      .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+      /* Nav drawer — usa transform para não criar área de scroll */
+      nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: min(300px, 82vw);
+        height: 100dvh;
+        background: #ffffff;
+        box-shadow: -4px 0 24px rgba(0,0,0,0.14);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        margin-left: 0;
+        padding: 68px 0 2rem;
+        z-index: 200;
+        transform: translateX(100%);
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow-y: auto;
+        overflow-x: hidden;
+      }
+      nav.nav-open { transform: translateX(0); }
+
+      nav a {
+        padding: 14px 20px;
+        border-radius: 0;
+        font-size: 15px;
+        border-bottom: 1px solid #f0f4f8;
+        width: 100%;
+      }
+
+      /* Dropdown inline no drawer */
+      .nav-dropdown          { position: static; }
+      .nav-dropdown-toggle {
+        width: 100%;
+        padding: 14px 20px;
+        border-radius: 0;
+        font-size: 15px;
+        border-bottom: 1px solid #f0f4f8;
+        justify-content: space-between;
+      }
+      .nav-dropdown:hover .nav-dropdown-toggle { background: none; color: #2d3a47; }
+      .nav-dropdown-menu {
+        display: none;
+        position: static;
+        min-width: 100%;
+        padding: 0;
+        background: #f8fafc;
+      }
+      .nav-dropdown.dropdown-open .nav-dropdown-menu {
+        display: block;
+      }
+      .nav-dropdown.dropdown-open .nav-dropdown-toggle i {
+        transform: rotate(180deg);
+      }
+      .nav-dropdown-menu-inner {
+        border-radius: 0;
+        border: none;
+        border-bottom: 1px solid #f0f4f8;
+        box-shadow: none;
+      }
+      .nav-dropdown-menu-inner a {
+        padding: 12px 20px 12px 36px;
+        font-size: 14px;
+        white-space: normal;
+      }
+
+      /* Overlay */
+      .nav-overlay {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(10,22,40,0.5);
+        z-index: 99;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s;
+      }
+      .nav-overlay.active { opacity: 1; pointer-events: all; }
+
+      /* ── Hero mobile: 1 slide, 442×657 px ──
+         Ordem: título → descrição → stats (quase quadrados) → botão CTA.
+         display:contents em hero-left eleva seus filhos ao hero-content,
+         permitindo order CSS sem alterar HTML.
+      ── */
+      .hero-section {
+        aspect-ratio: auto;
+        min-height: 0;
+        max-height: none;
+        height: calc(100dvh - 60px);
+        overflow: hidden;
+      }
+      .hero-track             { transform: none !important; transition: none !important; }
+
+      /* Slide 1: padding-top menor para texto mais próximo do header */
+      .hero-slide-1 {
+        box-sizing: border-box;
+        width: 100%;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        padding: 0.75rem 20px 1.25rem;
+      }
+
+      /* hero-content: centralizado verticalmente, margens iguais topo e fundo */
+      .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        flex: 1;
+        gap: 0.75rem;
+      }
+
+      /* hero-left some da box: filhos viram flex-items diretos de hero-content */
+      .hero-left { display: contents; }
+
+      /* ── Ordem dos itens: 1 título · 2 desc · 3 stats · 4 CTA ── */
+      .hero-title {
+        order: 1;
+        width: 100%; max-width: 100%; box-sizing: border-box;
+        text-align: center; margin: 0; overflow-wrap: break-word;
+      }
+      .hero-title-main   { font-size: 1.9rem; line-height: 1.2; }
+      .hero-title-accent { font-size: 1.73rem; line-height: 1.15; }
+
+      .hero-description {
+        order: 2;
+        width: 100%; max-width: 100%; box-sizing: border-box;
+        font-size: 0.88rem; line-height: 1.45;
+        text-align: center; margin: 0; overflow-wrap: break-word;
+      }
+
+      /* flex: 0.7 → grid recebe 70% do espaço livre (spec: soma < 1 = fração exata) */
+      .hero-right {
+        order: 3;
+        width: 100%; max-width: 100%; box-sizing: border-box;
+        flex: 0.7;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 0.5rem;
+        align-content: stretch;
+        margin-top: 1.5rem;
+      }
+
+      .hero-cta {
+        order: 4;
+        box-sizing: border-box; max-width: 100%;
+        padding: 0.7rem 2rem; font-size: 0.88rem;
+        white-space: normal; text-align: center;
+        margin-top: 1.5rem;
+      }
+
+      .stat-item {
+        box-sizing: border-box;
+        display: flex; flex-direction: column;
+        justify-content: center; align-items: center;
+        padding: 0.75rem 0.5rem;
+        border-radius: 12px;
+      }
+      .stat-number { font-size: 1.8rem;  margin-bottom: 0.25rem; }
+      .stat-label  { font-size: 0.65rem; }
+
+      /* ── Sobre Nós: parágrafo menor, igual ao hero description ── */
+      .sobre-texto { font-size: 0.88rem; }
+
+      /* ── Sections padding ── */
+      .sobre-section,
+      .missao-section,
+      .solucoes-section,
+      .faq-section {
+        padding: 3.5rem 20px;
+      }
+      .consultores-section { padding: 3.5rem 20px; }
+      .footer { padding: 3rem 20px 1.5rem; }
+
+      /* ── Títulos ── */
+      .section-title,
+      .section-title-light,
+      .section-title-white { font-size: 1.75rem; }
+
+      /* ── Sobre ── */
+      .sobre-texto  { text-align: center; }
+      .sobre-logos  { gap: 1.25rem; flex-wrap: nowrap; justify-content: center; }
+      .sobre-logos .logo-valoro { height: 28px; }
+      .sobre-logos .logo-nord   { height: 36px; }
+
+      /* ── Missão ── */
+      .missao-card-text { font-size: 0.88rem; }
+
+      /* ── Missão: carrossel com setas ── */
+      .missao-carousel-wrap {
+        display: block;
+        position: relative;
+        margin-top: 2rem;
+      }
+      .missao-arrow {
+        display: flex;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+        color: #1a4fa0;
+        font-size: 0.8rem;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.2s, box-shadow 0.2s;
+      }
+      .missao-arrow:active { background: #eef4fd; }
+      .missao-arrow--prev  { left: -6px; }
+      .missao-arrow--next  { right: -6px; }
+      .missao-grid {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: 1rem;
+        padding-bottom: 0.5rem;
+        scrollbar-width: none;
+      }
+      .missao-grid::-webkit-scrollbar { display: none; }
+      .missao-card {
+        flex: 0 0 78vw;
+        max-width: 300px;
+        scroll-snap-align: center;
+      }
+
+      /* ── Soluções: esconde roda, mostra acordeão ── */
+      .solucoes-layout      { display: none; }
+      .solucoes-mobile-list { display: flex; flex-direction: column; gap: 0.75rem; }
+
+      /* ── Consultores: 2 colunas ── */
+      .consultores-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+      }
+      .consultor-card {
+        border-radius: 14px;
+        padding: 1.25rem 0.75rem;
+      }
+      .consultor-photo {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 0.75rem;
+      }
+      .consultor-name {
+        font-size: 0.85rem;
+        margin-bottom: 0.5rem;
+      }
+      .consultor-certs { gap: 0.3rem; margin-bottom: 0.5rem; }
+      .cert-badge { font-size: 0.62rem; padding: 3px 8px; }
+      .consultor-location { font-size: 0.75rem; }
+
+      /* ── Footer: 1 coluna ── */
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem 1.25rem;
+      }
+      .footer-grid > div:first-child {
+        grid-column: 1 / -1;
+      }
+      .footer-logo-valoro  { height: 28px; }
+      .footer-logo-nord    { height: 36px; }
+      .footer-logos-divider { height: 24px; }
+      .footer-desc { max-width: 100%; }
+      .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0.4rem;
+      }
+      .footer-desc { font-size: 0.88rem; }
+      .footer-links a,
+      .footer-contact-item span,
+      .footer-contact-item a { font-size: 0.78rem; }
+      .footer-copy { font-size: 0.68rem; white-space: nowrap; }
+
+      /* ── Parceiras mobile ── */
+      .parceiras-title { font-size: 1.75rem; letter-spacing: -0.5px; text-transform: none; }
+      .parceiras-mobile { display: none; }
+      .parceiras-track  { gap: 0; animation-duration: 8s; }
+      .parceiras-track img { height: 60px; margin-right: 2.5rem; }
+
+      /* ── Tabelas nos modais legais: scroll interno ── */
+      .legal-modal-body table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+      .legal-modal-body td,
+      .legal-modal-body th { white-space: normal; min-width: 100px; }
+
+      /* ── Garantia final: nenhum elemento ultrapassa a largura ── */
+      .sobre-inner,
+      .missao-inner,
+      .solucoes-inner,
+      .consultores-inner,
+      .faq-inner,
+      .footer-inner { max-width: 100%; overflow-x: hidden; }
+
+    }
+
+    /* ════════════════════════════════════════
+       RESPONSIVO — CELULAR PEQUENO  (≤ 420px)
+       ════════════════════════════════════════ */
+    @media (max-width: 420px) {
+      .hero-title-main   { font-size: 1.65rem; }
+      .hero-title-accent { font-size: 1.45rem; }
+      .hero-description  { font-size: 0.8rem; }
+      .stat-number       { font-size: 1.8rem; }
+      .stat-item         { padding: 0.6rem 0.4rem; border-radius: 10px; }
+      .section-title,
+      .section-title-light,
+      .section-title-white { font-size: 1.5rem; }
+    }
+
+    /* ── BOTÃO FLUTUANTE WHATSAPP ── */
+    .whatsapp-fab {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 9999;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #25d366;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.75rem;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+    }
+    .whatsapp-fab:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 22px rgba(0,0,0,0.32);
+    }
+    @media (max-width: 480px) {
+      .whatsapp-fab { bottom: 20px; right: 16px; width: 50px; height: 50px; font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+
+      <!-- LOGOS -->
+      <div class="logos">
+        <a href="#" class="logo">
+          <img src="Logos-Nord-Valoro/logo.png" alt="Valoro Invest" />
+        </a>
+        <div class="logos-divider"></div>
+        <a href="#" class="logo logo-nord">
+          <img src="Logos-Nord-Valoro/logo-nord.jpeg" alt="Nord Wealth" />
+        </a>
+      </div>
+
+      <!-- NAV -->
+      <nav>
+        <a href="#inicio" class="active">Início</a>
+        <a href="#sobre">Sobre Nós</a>
+<a href="#solucoes">Soluções</a>
+        <a href="#consultores">Consultores</a>
+        <a href="#faq">FAQ</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle">Calculadoras <i class="fa-solid fa-chevron-down"></i></button>
+          <div class="nav-dropdown-menu">
+            <div class="nav-dropdown-menu-inner">
+              <a href="https://liberta.nordinvestimentos.com.br/patrimonioideal?utm_source=Valoro&office=22&utm_campaign=site-valoroinvest" target="_blank" rel="noopener noreferrer">Patrimônio Ideal</a>
+              <a href="https://liberta.nordinvestimentos.com.br/liberdadefinanceira?utm_source=Valoro&office=22&utm_campaign=site-valoroinvest" target="_blank" rel="noopener noreferrer">Liberdade Financeira</a>
+              <a href="https://liberta.nordinvestimentos.com.br/reservafinanceira?utm_source=Valoro&office=22&utm_campaign=site-valoroinvest" target="_blank" rel="noopener noreferrer">Reserva Financeira</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- HAMBURGER (apenas mobile) -->
+      <button class="nav-hamburger" id="navHamburger" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <!-- CTA -->
+      <a href="contato.html" class="btn-cta">Fale com um Especialista</a>
+
+    </div>
+  </header>
+  <div class="nav-overlay" id="navOverlay"></div>
+
+  <!-- ── HERO ── -->
+  <section id="inicio" class="hero-section">
+    <div class="hero-track" id="heroTrack">
+
+      <!-- Slide 1: conteúdo + stats -->
+      <div class="hero-slide hero-slide-1">
+        <div class="hero-content">
+
+          <div class="hero-left">
+            <h1 class="hero-title">
+              <span class="hero-title-main">Proteção e</span>
+              <span class="hero-title-accent">Crescimento Patrimonial</span>
+            </h1>
+            <p class="hero-description">
+              Consultoria de Investimentos e Gestão Patrimonial focada em empresários e famílias
+              que desejam proteger, organizar e fazer crescer seu patrimônio.
+            </p>
+            <a href="contato.html" class="hero-cta">Fale com um Especialista</a>
+          </div>
+
+          <div class="hero-right">
+            <div class="stat-item">
+              <span class="stat-number" data-prefix="+" data-target="10" data-suffix=" bi">+10 bi</span>
+              <span class="stat-label">geridos</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" data-prefix="+" data-target="2500" data-suffix="" data-thousands="true">+2.500</span>
+              <span class="stat-label">famílias atendidas</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" data-prefix="+" data-target="13" data-suffix=" mi">+13 mi</span>
+              <span class="stat-label">em cashback aos clientes</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" data-prefix="+" data-target="15" data-suffix="">+15</span>
+              <span class="stat-label">anos de experiência</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </section>
+
+  <!-- ── SOBRE NÓS ── -->
+  <section id="sobre" class="sobre-section">
+    <div class="sobre-inner">
+
+      <h2 class="section-title">Sobre Nós</h2>
+      <p class="section-subtitle">Parceria para o seu futuro financeiro</p>
+
+      <p class="sobre-texto">
+        Somos um escritório de consultoria de investimentos e gestão patrimonial, com atuação independente e foco absoluto nos interesses de nossos clientes.
+      </p>
+      <p class="sobre-texto">
+        Como o primeiro escritório credenciado à Nord Wealth no Brasil, oferecemos uma abordagem estratégica, baseada em análise criteriosa e alinhamento total aos objetivos de cada investidor.
+      </p>
+      <p class="sobre-texto">
+        Atendemos clientes em diferentes estágios de sua jornada financeira, oferecendo soluções personalizadas para quem busca iniciar, estruturar, proteger ou expandir seu patrimônio com consistência e visão de longo prazo.
+      </p>
+      <p class="sobre-texto">
+        Nosso trabalho vai além da recomendação de investimentos. Atuamos de forma integrada, com planejamento financeiro, organização patrimonial e acompanhamento contínuo, proporcionando maior clareza, segurança e eficiência na tomada de decisões.
+      </p>
+      <p class="sobre-texto">
+        Acreditamos que uma gestão patrimonial sólida é construída com disciplina, método e visão estratégica, permitindo atravessar diferentes cenários econômicos com confiança e sustentabilidade.
+      </p>
+
+      <div class="sobre-logos">
+        <img src="Logos-Nord-Valoro/logo.png" alt="Valoro Invest" class="logo-valoro" />
+        <img src="Logos-Nord-Valoro/logo-nord.jpeg" alt="Nord Wealth" class="logo-nord" />
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── INSTITUIÇÕES PARCEIRAS ── -->
+  <section class="parceiras-section">
+    <p class="parceiras-title">Instituições Parceiras</p>
+    <div class="parceiras-track-wrap">
+      <div class="parceiras-track">
+        <img src="Logos-Instituicoes/inst-1.png" alt="Instituição 1" />
+        <img src="Logos-Instituicoes/inst-2.png" alt="Instituição 2" />
+        <img src="Logos-Instituicoes/inst-3.png" alt="Instituição 3" />
+        <img src="Logos-Instituicoes/inst-4.png" alt="Instituição 4" />
+        <img src="Logos-Instituicoes/inst-5.png" alt="Instituição 5" />
+        <img src="Logos-Instituicoes/inst-6.png" alt="Instituição 6" />
+        <img src="Logos-Instituicoes/inst-7.png" alt="Instituição 7" />
+        <img src="Logos-Instituicoes/inst-8.png" alt="Instituição 8" />
+        <!-- duplicado para loop sem salto -->
+        <img src="Logos-Instituicoes/inst-1.png" alt="Instituição 1" />
+        <img src="Logos-Instituicoes/inst-2.png" alt="Instituição 2" />
+        <img src="Logos-Instituicoes/inst-3.png" alt="Instituição 3" />
+        <img src="Logos-Instituicoes/inst-4.png" alt="Instituição 4" />
+        <img src="Logos-Instituicoes/inst-5.png" alt="Instituição 5" />
+        <img src="Logos-Instituicoes/inst-6.png" alt="Instituição 6" />
+        <img src="Logos-Instituicoes/inst-7.png" alt="Instituição 7" />
+        <img src="Logos-Instituicoes/inst-8.png" alt="Instituição 8" />
+      </div>
+    </div>
+
+    <!-- 2 linhas animadas — apenas mobile -->
+    <div class="parceiras-mobile">
+      <div class="parceiras-mob-track-wrap">
+        <div class="parceiras-mob-track parceiras-mob-track--1">
+          <img src="Logos-Instituicoes/inst-1.png" alt="Instituição 1" /><img src="Logos-Instituicoes/inst-2.png" alt="Instituição 2" /><img src="Logos-Instituicoes/inst-3.png" alt="Instituição 3" /><img src="Logos-Instituicoes/inst-4.png" alt="Instituição 4" /><img src="Logos-Instituicoes/inst-5.png" alt="Instituição 5" /><img src="Logos-Instituicoes/inst-6.png" alt="Instituição 6" /><img src="Logos-Instituicoes/inst-7.png" alt="Instituição 7" /><img src="Logos-Instituicoes/inst-8.png" alt="Instituição 8" />
+          <img src="Logos-Instituicoes/inst-1.png" alt="" aria-hidden="true" /><img src="Logos-Instituicoes/inst-2.png" alt="" aria-hidden="true" /><img src="Logos-Instituicoes/inst-3.png" alt="" aria-hidden="true" /><img src="Logos-Instituicoes/inst-4.png" alt="" aria-hidden="true" /><img src="Logos-Instituicoes/inst-5.png" alt="" aria-hidden="true" /><img src="Logos-Instituicoes/inst-6.png" alt="" aria-hidden="true" /><img src="Logos-Instituicoes/inst-7.png" alt="" aria-hidden="true" /><img src="Logos-Instituicoes/inst-8.png" alt="" aria-hidden="true" />
+        </div>
+      </div>
+      <div class="parceiras-mob-track-wrap">
+        <div class="parceiras-mob-track parceiras-mob-track--2">
+          <img src="Logos-Instituicoes/inst-1.png" alt="Instituição 1" /><img src="Logos-Instituicoes/inst-2.png" alt="Instituição 2" /><img src="Logos-Instituicoes/inst-3.png" alt="Instituição 3" /><img src="Logos-Instituicoes/inst-4.png" alt="Instituição 4" /><img src="Logos-Instituicoes/inst-5.png" alt="Instituição 5" /><img src="Logos-Instituicoes/inst-6.png" alt="Instituição 6" /><img src="Logos-Instituicoes/inst-7.png" alt="Instituição 7" /><img src="Logos-Instituicoes/inst-8.png" alt="Instituição 8" />
+          <img src="Logos-Instituicoes/inst-1.png" alt="" aria-hidden="true" /><img src="Logos-Instituicoes/inst-2.png" alt="" aria-hidden="true" /><img src="Logos-Instituicoes/inst-3.png" alt="" aria-hidden="true" /><img src="Logos-Instituicoes/inst-4.png" alt="" aria-hidden="true" /><img src="Logos-Instituicoes/inst-5.png" alt="" aria-hidden="true" /><img src="Logos-Instituicoes/inst-6.png" alt="" aria-hidden="true" /><img src="Logos-Instituicoes/inst-7.png" alt="" aria-hidden="true" /><img src="Logos-Instituicoes/inst-8.png" alt="" aria-hidden="true" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── MISSÃO, VISÃO E VALORES ── -->
+  <section id="missao" class="missao-section">
+    <div class="missao-inner">
+
+      <h2 class="section-title">Missão, Visão e Valores</h2>
+
+      <!-- wrapper com setas — setas visíveis apenas no mobile -->
+      <div class="missao-carousel-wrap">
+        <button class="missao-arrow missao-arrow--prev" id="missaoPrev" aria-label="Anterior">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="missao-arrow missao-arrow--next" id="missaoNext" aria-label="Próximo">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+
+      <div class="missao-grid" id="missaoGrid">
+
+        <div class="missao-card">
+          <div class="missao-icon">
+            <i class="fas fa-bullseye"></i>
+          </div>
+          <h3 class="missao-card-title">Missão</h3>
+          <p class="missao-card-text">
+            Proteger, preservar e rentabilizar o patrimônio de famílias e empresas, oferecendo orientação personalizada em todas as áreas de gestão de patrimônio, com foco em relacionamento de longo prazo baseado em confiança e transparência.
+          </p>
+        </div>
+
+        <div class="missao-card">
+          <div class="missao-icon">
+            <i class="fas fa-eye"></i>
+          </div>
+          <h3 class="missao-card-title">Visão</h3>
+          <p class="missao-card-text">
+            Ser referência em gestão patrimonial no Brasil, reconhecida pela excelência no atendimento, independência na consultoria e resultados consistentes que preservem e multipliquem o patrimônio das famílias atendidas.
+          </p>
+        </div>
+
+        <div class="missao-card">
+          <div class="missao-icon">
+            <i class="fas fa-gem"></i>
+          </div>
+          <h3 class="missao-card-title">Valores</h3>
+          <p class="missao-card-text">
+            Atuamos com <strong>independência</strong>, mantendo o foco total nos interesses do cliente; com <strong>transparência</strong>, cultivando relacionamentos claros e honestos; com <strong>excelência</strong>, na busca constante pela melhor solução; e com visão de <strong>longo prazo</strong>, comprometidos com a construção de legados duradouros.
+          </p>
+        </div>
+
+      </div><!-- fim missao-grid -->
+      </div><!-- fim missao-carousel-wrap -->
+    </div>
+  </section>
+
+
+  <!-- ── NOSSAS SOLUÇÕES ── -->
+  <section id="solucoes" class="solucoes-section">
+    <div class="solucoes-inner">
+      <h2 class="section-title-light">Nossas Soluções</h2>
+      <p class="solucoes-subtitle">Soluções completas para proteger, crescer e perpetuar seu patrimônio</p>
+
+      <div class="solucoes-layout">
+
+        <!-- roda -->
+        <div class="wheel-wrap">
+          <svg id="wheelSvg" class="wheel-svg" viewBox="0 0 580 580" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="segGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#1a4fa0"/>
+                <stop offset="100%" stop-color="#3182ce"/>
+              </linearGradient>
+            </defs>
+            <!-- guide ring -->
+            <circle id="guideRing" cx="290" cy="290" r="205" fill="none" stroke="#e2eaf6" stroke-width="1" stroke-dasharray="4 4"/>
+            <!-- hub -->
+            <circle cx="290" cy="290" r="74" fill="#ffffff" stroke="none"/>
+            <image href="Logos-Nord-Valoro/logo-valoro-simbolo.png" x="248" y="258" width="84" height="64" preserveAspectRatio="xMidYMid meet"/>
+          </svg>
+        </div>
+
+        <!-- painel -->
+        <div class="solucoes-panel" id="solPanel">
+          <div>
+            <span class="panel-counter" id="panelCounter">01 / 12</span>
+            <h3 class="panel-title" id="panelTitle"></h3>
+            <div class="panel-divider"></div>
+            <p class="panel-desc" id="panelDesc"></p>
+            <ul class="panel-bullets" id="panelBullets"></ul>
+          </div>
+          <a href="contato.html" class="panel-cta-sol">Falar com um especialista</a>
+        </div>
+
+      </div>
+
+      <!-- acordeão para mobile -->
+      <div class="solucoes-mobile-list" id="solMobileList"></div>
+
+    </div>
+  </section>
+
+  <!-- ── NOSSOS CONSULTORES ── -->
+  <section id="consultores" class="consultores-section">
+    <div class="consultores-inner">
+
+      <h2 class="section-title-white">Nossos Consultores</h2>
+      <p class="consultores-subtitle">Equipe de especialistas certificados para cuidar do seu patrimônio</p>
+
+      <div class="consultores-grid">
+
+        <div class="consultor-card">
+          <div class="consultor-photo">
+            <img src="Fotos-Perfil-Socios/Thiago.png" alt="Thiago Marcolino" />
+          </div>
+          <h3 class="consultor-name">Thiago Marcolino</h3>
+          <div class="consultor-certs">
+            <span class="cert-badge">CEA</span>
+            <span class="cert-badge">CFP®</span>
+          </div>
+          <div class="consultor-location">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Campinas, SP</span>
+          </div>
+        </div>
+
+        <div class="consultor-card">
+          <div class="consultor-photo">
+            <img src="Fotos-Perfil-Socios/Adauto.png" alt="Adauto Junior" />
+          </div>
+          <h3 class="consultor-name">Adauto Junior</h3>
+          <div class="consultor-certs">
+            <span class="cert-badge">CEA</span>
+          </div>
+          <div class="consultor-location">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Campinas, SP</span>
+          </div>
+        </div>
+
+        <div class="consultor-card">
+          <div class="consultor-photo">
+            <img src="Fotos-Perfil-Socios/Helen.png" alt="Helen Fogaça" />
+          </div>
+          <h3 class="consultor-name">Helen Fogaça</h3>
+          <div class="consultor-certs">
+            <span class="cert-badge">CFP®</span>
+          </div>
+          <div class="consultor-location">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Campinas, SP</span>
+          </div>
+        </div>
+
+        <div class="consultor-card">
+          <div class="consultor-photo">
+            <img src="Fotos-Perfil-Socios/Fabio.png" alt="Fábio Gennaro" />
+          </div>
+          <h3 class="consultor-name">Fábio Gennaro</h3>
+          <div class="consultor-certs">
+            <span class="cert-badge">CEA</span>
+            <span class="cert-badge">CVM</span>
+          </div>
+          <div class="consultor-location">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Campinas, SP</span>
+          </div>
+        </div>
+
+        <div class="consultor-card">
+          <div class="consultor-photo">
+            <img src="Fotos-Perfil-Socios/Victor.png" alt="Victor Hipólito" />
+          </div>
+          <h3 class="consultor-name">Victor Hipólito</h3>
+          <div class="consultor-certs">
+            <span class="cert-badge">CEA</span>
+          </div>
+          <div class="consultor-location">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Campinas, SP</span>
+          </div>
+        </div>
+
+        <div class="consultor-card">
+          <div class="consultor-photo">
+            <img src="Fotos-Perfil-Socios/Bruno.png" alt="Bruno Xavier" />
+          </div>
+          <h3 class="consultor-name">Bruno Xavier</h3>
+          <div class="consultor-certs">
+            <span class="cert-badge">CEA</span>
+          </div>
+          <div class="consultor-location">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Campinas, SP</span>
+          </div>
+        </div>
+
+        <div class="consultor-card">
+          <div class="consultor-photo">
+            <img src="Fotos-Perfil-Socios/Ricardo.png" alt="Ricardo Banger" />
+          </div>
+          <h3 class="consultor-name">Ricardo Banger</h3>
+          <div class="consultor-certs">
+            <span class="cert-badge">CEA</span>
+          </div>
+          <div class="consultor-location">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Alphaville, SP</span>
+          </div>
+        </div>
+
+        <div class="consultor-card">
+          <div class="consultor-photo">
+            <img src="Fotos-Perfil-Socios/Angelo.png" alt="Ângelo Garcia" />
+          </div>
+          <h3 class="consultor-name">Ângelo Garcia</h3>
+          <div class="consultor-certs">
+            <span class="cert-badge">CEA</span>
+          </div>
+          <div class="consultor-location">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Goiânia, GO</span>
+          </div>
+        </div>
+
+        <div class="consultor-card">
+          <div class="consultor-photo">
+            <img src="Fotos-Perfil-Socios/Karol.png" alt="Karolina Ribeiro" />
+          </div>
+          <h3 class="consultor-name">Karolina Ribeiro</h3>
+          <div class="consultor-certs">
+            <span class="cert-badge">CEA</span>
+          </div>
+          <div class="consultor-location">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Uberlândia, MG</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section id="faq" class="faq-section">
+    <div class="faq-inner">
+
+      <h2 class="section-title">Perguntas Frequentes</h2>
+      <p class="faq-subtitle">Tire suas dúvidas sobre nossa consultoria</p>
+
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-question">
+            O que é uma consultoria de investimentos independente?
+            <span class="faq-icon"><i class="fas fa-plus"></i></span>
+          </button>
+          <div class="faq-answer">
+            <p>Uma consultoria independente não tem vínculo com bancos ou corretoras, o que garante recomendações totalmente isentas. Nosso único compromisso é com o seu patrimônio — indicamos os melhores produtos do mercado, e não os que pagam mais comissão.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Qual a diferença entre a Nord Wealth e um assessor de investimentos (AAI)?
+            <span class="faq-icon"><i class="fas fa-plus"></i></span>
+          </button>
+          <div class="faq-answer">
+            <p>O assessor de investimentos (AAI) representa uma corretora ou instituição financeira e normalmente é remunerado por comissões dos produtos distribuídos.<br><br>Já a Nord Wealth atua como consultoria independente, representando exclusivamente os interesses do cliente. Nosso modelo elimina conflitos de interesse, pois qualquer comissão de produtos é devolvida ao cliente.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            O que diferencia a Valoro de um banco ou corretora tradicional?
+            <span class="faq-icon"><i class="fas fa-plus"></i></span>
+          </button>
+          <div class="faq-answer">
+            <p>Bancos e corretoras recomendam produtos próprios ou parceiros. A Valoro, como consultoria independente credenciada à Nord Wealth, tem acesso a todo o mercado e recomenda o que é melhor para você. Além disso, oferecemos planejamento patrimonial completo — não apenas a compra e venda de ativos.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Como funciona o processo de início do atendimento?
+            <span class="faq-icon"><i class="fas fa-plus"></i></span>
+          </button>
+          <div class="faq-answer">
+            <p>O processo começa com uma reunião diagnóstica sem custo, onde mapeamos sua situação financeira, objetivos e perfil de investidor. A partir daí, elaboramos um plano personalizado e iniciamos a implementação com acompanhamento contínuo.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Qual o valor mínimo para começar a investir com a Valoro?
+            <span class="faq-icon"><i class="fas fa-plus"></i></span>
+          </button>
+          <div class="faq-answer">
+            <p>Atendemos clientes em diferentes estágios patrimoniais. Entre em contato com um de nossos consultores para entender qual modalidade de atendimento faz mais sentido para o seu momento financeiro atual.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Quanto custa o serviço de consultoria?
+            <span class="faq-icon"><i class="fas fa-plus"></i></span>
+          </button>
+          <div class="faq-answer">
+            <p>A consultoria é remunerada por meio de um honorário anual calculado sobre o patrimônio investido sob gestão da Nord Wealth.<br><br>O percentual pode variar de acordo com o patrimônio investido e o potencial de novos aportes.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Como o honorário é pago?
+            <span class="faq-icon"><i class="fas fa-plus"></i></span>
+          </button>
+          <div class="faq-answer">
+            <p>O honorário é cobrado mensalmente diretamente nas plataformas parceiras.<br><br>O patrimônio do cliente é calculado diariamente e a taxa é apurada pro rata, garantindo que o valor pago reflita exatamente o patrimônio acompanhado pela consultoria.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Como funciona o cashback (rebate de comissões)?
+            <span class="faq-icon"><i class="fas fa-plus"></i></span>
+          </button>
+          <div class="faq-answer">
+            <p>Como a Nord Wealth é uma consultoria independente e não pode receber comissões de produtos financeiros, qualquer rebate gerado pelos investimentos é devolvido integralmente ao cliente.<br><br>Esse valor é creditado diretamente pela corretora na conta do cliente, normalmente até o 10º dia útil de cada mês.<br><br>Esse modelo elimina conflitos de interesse e garante que nossas recomendações sejam sempre baseadas no que é melhor para o cliente.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Como acompanho o desempenho da minha carteira?
+            <span class="faq-icon"><i class="fas fa-plus"></i></span>
+          </button>
+          <div class="faq-answer">
+            <p>Você recebe relatórios periódicos de desempenho e tem acesso a reuniões de acompanhamento regulares com seu consultor. Toda a sua carteira é monitorada continuamente e rebalanceada sempre que necessário para manter o alinhamento com seus objetivos.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="footer-inner">
+
+      <div class="footer-grid">
+
+        <!-- coluna 1: marca + social -->
+        <div>
+          <div class="footer-logos">
+            <img src="Logos-Nord-Valoro/logo-valoro-branco.png" alt="Valoro Invest" class="footer-logo-valoro" />
+            <div class="footer-logos-divider"></div>
+            <img src="Logos-Nord-Valoro/logo-nord-branco.png" alt="Nord Wealth" class="footer-logo-nord" />
+          </div>
+          <p class="footer-desc">Consultoria especializada em gestão de patrimônio e investimentos. Proteja e potencialize seu capital com estratégias personalizadas.</p>
+          <div class="footer-social">
+            <a href="https://br.linkedin.com/company/valoro-invest" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.instagram.com/valoroinvest/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/+5511993288109" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- coluna 2: links rápidos -->
+        <div>
+          <p class="footer-col-title">Links Rápidos</p>
+          <ul class="footer-links">
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#sobre">Sobre Nós</a></li>
+            <li><a href="#missao">Missão e Valores</a></li>
+            <li><a href="#solucoes">Soluções</a></li>
+            <li><a href="#consultores">Consultores</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+
+        <!-- coluna 3: fale conosco -->
+        <div>
+          <p class="footer-col-title">Fale Conosco</p>
+          <div class="footer-contact-list">
+            <div class="footer-contact-item">
+              <i class="fas fa-phone"></i>
+              <a href="https://wa.me/+5511993288109" target="_blank" rel="noopener noreferrer">(11) 99328-8109</a>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:contato@valoroinvest.com.br">contato@valoroinvest.com.br</a>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <a href="https://google.com/maps/place/Valoro+Invest/data=!4m2!3m1!1s0x0:0xbdec6676a96f6334?sa=X&ved=1t:2428&ictx=111" target="_blank" rel="noopener noreferrer">Centre Ville<br>R. Place des Vosges, 88 - Sala 206<br>Souzas, Campinas - SP<br>13105-825</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2025 <span>Valoro Invest</span>. Todos os direitos reservados.</p>
+        <p class="footer-copy">
+          <a href="termos.html" class="footer-legal-link" data-modal="termos">Termos de Uso</a>
+          &nbsp;·&nbsp;
+          <a href="privacidade.html" class="footer-legal-link" data-modal="privacidade">Política de Privacidade</a>
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ── MODAL: TERMOS DE USO ── -->
+  <div class="legal-modal" id="modal-termos" role="dialog" aria-modal="true" aria-labelledby="titulo-termos">
+    <div class="legal-modal-backdrop"></div>
+    <div class="legal-modal-box">
+      <div class="legal-modal-header">
+        <div>
+          <h2 id="titulo-termos">Termos de Uso</h2>
+          <p class="legal-modal-meta">Vigência: 14 de março de 2026 · Última atualização: 14 de março de 2026 · 16 cláusulas</p>
+        </div>
+        <button class="legal-modal-close" aria-label="Fechar">&times;</button>
+      </div>
+      <div class="legal-modal-body">
+
+        <section>
+          <h3><span class="lm-num">1</span> Aceitação dos Termos</h3>
+          <p>Ao acessar, navegar ou utilizar qualquer recurso do site <strong>valoroinvest.com.br</strong> e seus subdomínios (o <strong>"Site"</strong>), o usuário declara ter lido, compreendido e concordado integralmente com os presentes Termos de Uso, com a Política de Privacidade e com todas as normas legais e regulatórias aplicáveis à atividade de consultoria de investimentos no Brasil.</p>
+          <p>Caso o usuário não concorde com qualquer disposição destes Termos, deverá cessar imediatamente o uso do Site. O acesso continuado implica aceitação tácita de todas as condições aqui estabelecidas.</p>
+          <div class="lm-notice info"><i class="fas fa-info-circle"></i><span>Estes Termos constituem um contrato legal vinculante entre o usuário e a Valoro Invest, nos termos do art. 434 do Código Civil Brasileiro e do art. 7º do Marco Civil da Internet (Lei nº 12.965/2014).</span></div>
+        </section>
+
+        <section>
+          <h3><span class="lm-num">2</span> Identificação da Empresa</h3>
+          <p>O Site é operado pela <strong>Valoro Invest Consultoria de Investimentos Ltda.</strong>, CNPJ 42.795.512/0001-31, com sede na Rua Place des Vosges, nº 88, Sala 206, Ville Sainte Hélène, Souzas, Campinas – SP, CEP 13105-825.</p>
+          <p>A Valoro Invest atua como <strong>escritório parceiro B2B</strong> da <strong>Nord Bankers Consultoria Ltda.</strong> (CNPJ 50.658.191/0001-51), entidade autorizada pela <strong>Comissão de Valores Mobiliários (CVM)</strong> para o exercício da atividade de Consultor de Valores Mobiliários Autônomo, na forma da Resolução CVM nº 19/2021.</p>
+          <p>Canal de atendimento: <a href="mailto:contato@valoroinvest.com.br">contato@valoroinvest.com.br</a> | <a href="tel:+5511993288109">(11) 99328-8109</a></p>
+        </section>
+
+        <section>
+          <h3><span class="lm-num">3</span> Natureza do Serviço e do Site</h3>
+          <p>O Site tem finalidade <strong>exclusivamente informativa e institucional</strong>. Por meio dele, a Valoro Invest apresenta informações sobre seus serviços, disponibiliza canais de contato, publica conteúdo educacional e permite inscrição em newsletter.</p>
+          <p>O Site <strong>não constitui</strong> plataforma de negociação e não permite a realização de operações financeiras. Nenhuma transação ou contratação de serviços se aperfeiçoa exclusivamente por meio do Site, sendo sempre necessária a formalização por contrato escrito específico.</p>
+        </section>
+
+        <section>
+          <h3><span class="lm-num">4</span> Aviso Regulatório — CVM</h3>
+          <div class="lm-reg">
+            <p><strong>Aviso Regulatório Obrigatório — CVM</strong></p>
+            <p>A <strong>Nord Bankers Consultoria Ltda.</strong> (CNPJ 50.658.191/0001-51), parceira da Valoro Invest, é autorizada pela CVM na categoria de Consultor de Valores Mobiliários, nos termos da Resolução CVM nº 19/2021.</p>
+            <p>Na condição de consultora de valores mobiliários, a Nord Bankers está proibida de receber qualquer remuneração ou benefício de terceiros em razão dos serviços prestados aos clientes, devendo toda remuneração recebida de emissores ou distribuidores ser integralmente repassada ao cliente (<em>cashback / rebate</em>), na forma do art. 16 da Resolução CVM nº 19/2021.</p>
+            <p>Os consultores de valores mobiliários não estão autorizados a administrar recursos de terceiros nem a custodiar ativos financeiros. Os ativos dos clientes permanecem sob custódia das instituições financeiras e corretoras parceiras, devidamente autorizadas pelo BACEN e pela CVM.</p>
+          </div>
+          <p>A verificação do registro da Nord Bankers pode ser realizada diretamente no <a href="https://www.cvm.gov.br" target="_blank" rel="noopener noreferrer">portal da CVM (cvm.gov.br)</a>.</p>
+        </section>
+
+        <section>
+          <h3><span class="lm-num">5</span> Disclaimer de Investimentos e Conteúdo Educacional</h3>
+          <div class="lm-notice danger"><i class="fas fa-exclamation-circle"></i><span><strong>Aviso importante:</strong> Nenhum conteúdo publicado neste Site constitui recomendação de investimento, oferta de compra ou venda de valores mobiliários, ou aconselhamento jurídico ou tributário.</span></div>
+          <ul>
+            <li><strong>Rentabilidade passada não é garantia de rentabilidade futura.</strong></li>
+            <li><strong>Todo investimento envolve riscos</strong>, incluindo a possibilidade de perda total do capital investido.</li>
+            <li>Dados, estatísticas e projeções têm caráter meramente <strong>ilustrativo e educacional</strong>.</li>
+            <li>Recomendações personalizadas somente são fornecidas no contexto de um contrato de consultoria formalizado, após o processo de <em>suitability</em> (Resolução CVM nº 30/2021).</li>
+          </ul>
+          <p>As estatísticas exibidas no Site referem-se à atuação histórica da equipe e não constituem projeção de resultados futuros, em conformidade com o art. 15 da Resolução CVM nº 35/2021.</p>
+        </section>
+
+        <section>
+          <h3><span class="lm-num">6</span> Uso Permitido do Site</h3>
+          <p>O acesso ao Site é gratuito. O usuário está autorizado a navegar para fins informativos, utilizar formulários de contato, inscrever-se na newsletter (com cancelamento a qualquer momento) e compartilhar links sem alterar o conteúdo original.</p>
+          <p>O uso pressupõe que o usuário seja maior de 18 anos, capaz civilmente, e forneça informações verdadeiras nos formulários.</p>
+        </section>
+
+        <section>
+          <h3><span class="lm-num">7</span> Condutas Proibidas</h3>
+          <p>É expressamente vedado ao usuário: reproduzir ou explorar comercialmente o conteúdo sem autorização; utilizar técnicas de <em>scraping</em> ou robôs para coleta de dados; tentar acessar sistemas internos sem autorização; inserir vírus ou códigos maliciosos; praticar fraude ou uso de identidade falsa; disseminar spam ou conteúdo ofensivo; ou realizar qualquer conduta que viole a legislação brasileira, incluindo o Marco Civil da Internet (Lei nº 12.965/2014).</p>
+          <p>O descumprimento pode ensejar responsabilização civil e criminal e a adoção imediata de medidas legais pela Valoro Invest.</p>
+        </section>
+
+        <section>
+          <h3><span class="lm-num">8</span> Propriedade Intelectual</h3>
+          <p>Todo o conteúdo do Site — textos, logotipos, marcas, design, fotografias, vídeos e código-fonte — é de propriedade exclusiva da Valoro Invest ou de seus licenciantes, protegido pela Lei nº 9.279/1996 e Lei nº 9.610/1998. O acesso ao Site não confere nenhuma licença sobre esses ativos além do estritamente necessário para a navegação.</p>
+          <p>As marcas de instituições parceiras (XP, BTG Pactual, Safra, Avenue Securities, Interactive Brokers, Morgan Stanley, Órama, Banco Inter, Nord Bankers) pertencem a seus respectivos titulares e foram utilizadas apenas para fins informativos.</p>
+        </section>
+
+        <section>
+          <h3><span class="lm-num">9</span> Links para Sites e Plataformas Externas</h3>
+          <p>O Site pode conter links para sites e plataformas de terceiros. Esses links são fornecidos para conveniência e <strong>não implicam responsabilidade da Valoro Invest</strong> pelo conteúdo ou práticas desses terceiros. Ao acessar links externos, o usuário estará sujeito aos termos dos respectivos sites.</p>
+        </section>
+
+        <section>
+          <h3><span class="lm-num">10</span> Limitação de Responsabilidade</h3>
+          <p>Na máxima extensão permitida pela legislação, a Valoro Invest <strong>não se responsabiliza</strong> por decisões de investimento tomadas com base no conteúdo informativo do Site sem formalização de contrato de consultoria; perdas financeiras decorrentes do uso do Site; falhas técnicas ou interrupções; conteúdo de sites de terceiros; ou informações desatualizadas de natureza dinâmica.</p>
+          <div class="lm-notice warning"><i class="fas fa-balance-scale"></i><span>As limitações não excluem a responsabilidade em casos de dolo, culpa grave ou violação de direitos do consumidor (CDC, Lei nº 8.078/1990), quando aplicável.</span></div>
+        </section>
+
+        <section>
+          <h3><span class="lm-num">11</span> Disponibilidade e Manutenção do Site</h3>
+          <p>A Valoro Invest <strong>não garante a disponibilidade ininterrupta</strong> do Site, que pode estar sujeito a interrupções programadas para manutenção, falhas de infraestrutura de terceiros ou eventos de força maior (art. 393 do Código Civil). Interrupções planejadas de longa duração serão comunicadas previamente.</p>
+        </section>
+
+        <section>
+          <h3><span class="lm-num">12</span> Código de Conduta ANBIMA e Autorregulação</h3>
+          <p>A Nord Bankers Consultoria Ltda. é associada à <strong>ANBIMA</strong>, sujeitando-se ao Código de Conduta Profissional e Ética, ao Código de Administração de Recursos de Terceiros e ao Código de Distribuição de Produtos de Investimento. Em caso de reclamações, os clientes podem acionar a ANBIMA em <a href="https://www.anbima.com.br" target="_blank" rel="noopener noreferrer">anbima.com.br</a> e a CVM em <a href="https://www.cvm.gov.br" target="_blank" rel="noopener noreferrer">cvm.gov.br</a>.</p>
+        </section>
+
+        <section>
+          <h3><span class="lm-num">13</span> Política de Conflito de Interesses</h3>
+          <p>A remuneração da consultoria provém <strong>exclusivamente de honorários pagos pelos clientes</strong>. É vedado receber comissões ou benefícios de emissores ou distribuidores (art. 16, Res. CVM 19/2021). Eventuais comissões recebidas de corretoras parceiras são integralmente devolvidas ao cliente na forma de <strong>cashback/rebate</strong>. Situações de potencial conflito são identificadas, comunicadas e gerenciadas com primazia ao interesse do cliente.</p>
+          <div class="lm-notice success"><i class="fas fa-handshake"></i><span>O modelo de consultoria independente é fiscalizado pela CVM. Suspeitas de conflito podem ser reportadas em <a href="https://www.cvm.gov.br" target="_blank" rel="noopener noreferrer" style="color:#276749;">cvm.gov.br</a>.</span></div>
+        </section>
+
+        <section>
+          <h3><span class="lm-num">14</span> Privacidade e Proteção de Dados (LGPD)</h3>
+          <p>O tratamento de dados pessoais dos usuários é regido pela <strong>Política de Privacidade da Valoro Invest</strong>, em conformidade com a LGPD (Lei nº 13.709/2018). Ao utilizar os formulários do Site, o usuário consente com o tratamento dos dados conforme descrito na Política. Dados de clientes relativos ao relacionamento de consultoria são protegidos pelo sigilo financeiro (Lei Complementar nº 105/2001).</p>
+        </section>
+
+        <section>
+          <h3><span class="lm-num">15</span> Alterações dos Termos de Uso</h3>
+          <p>A Valoro Invest reserva-se o direito de modificar estes Termos a qualquer tempo. Alterações <strong>materiais</strong> serão comunicadas com antecedência mínima de <strong>15 dias corridos</strong> por aviso no Site ou por e-mail. O uso continuado após as alterações implica sua aceitação tácita.</p>
+        </section>
+
+        <section>
+          <h3><span class="lm-num">16</span> Foro, Lei Aplicável e Resolução de Conflitos</h3>
+          <p>Estes Termos são regidos pelas <strong>leis da República Federativa do Brasil</strong>. Fica eleito o <strong>Foro da Comarca de Campinas, Estado de São Paulo</strong>, com renúncia a qualquer outro. As partes comprometem-se a buscar solução amigável antes de recorrer ao Poder Judiciário, por meio de contato direto com a Valoro Invest, Ouvidoria da Nord Bankers, ANBIMA ou CVM. Para questões de proteção de dados, o usuário pode acionar a ANPD (art. 55-A da LGPD).</p>
+        </section>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ── MODAL: POLÍTICA DE PRIVACIDADE ── -->
+  <div class="legal-modal" id="modal-privacidade" role="dialog" aria-modal="true" aria-labelledby="titulo-privacidade">
+    <div class="legal-modal-backdrop"></div>
+    <div class="legal-modal-box">
+      <div class="legal-modal-header">
+        <div>
+          <h2 id="titulo-privacidade">Política de Privacidade</h2>
+          <p class="legal-modal-meta">Versão vigente: 14 de março de 2026 · Última atualização: 14 de março de 2026 · 14 cláusulas</p>
+        </div>
+        <button class="legal-modal-close" aria-label="Fechar">&times;</button>
+      </div>
+      <div class="legal-modal-body">
+
+        <section>
+          <h3><span class="lm-num">1</span> Identificação do Controlador de Dados</h3>
+          <p>A <strong>Valoro Invest Consultoria de Investimentos Ltda.</strong>, CNPJ 42.795.512/0001-31, com sede na Rua Place des Vosges, nº 88, Sala 206, Ville Sainte Hélène, Souzas, Campinas – SP, CEP 13105-825, é a <strong>Controladora</strong> dos dados pessoais tratados por meio deste site e de suas atividades de consultoria de investimentos.</p>
+          <p>A Valoro Invest é parceira B2B da <strong>Nord Bankers Consultoria Ltda.</strong> (CNPJ 50.658.191/0001-51), autorizada e regulada pela CVM nos termos da Resolução CVM nº 19/2021.</p>
+          <div class="lm-notice info"><i class="fas fa-info-circle"></i><span>Esta Política aplica-se a todos os usuários do site <strong>valoroinvest.com.br</strong>, leads que preenchem formulários, assinantes de newsletter e clientes da Valoro Invest.</span></div>
+        </section>
+
+        <section>
+          <h3><span class="lm-num">2</span> Definições (LGPD, art. 5º)</h3>
+          <table>
+            <thead><tr><th>Termo</th><th>Definição</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Dado pessoal</strong></td><td>Informação relacionada a pessoa natural identificada ou identificável.</td></tr>
+              <tr><td><strong>Dado sensível</strong></td><td>Dado sobre origem racial/étnica, crença religiosa, saúde, vida sexual, dado genético ou biométrico.</td></tr>
+              <tr><td><strong>Tratamento</strong></td><td>Toda operação realizada com dados pessoais (coleta, armazenamento, uso, compartilhamento, eliminação etc.).</td></tr>
+              <tr><td><strong>Controlador</strong></td><td>Pessoa jurídica que toma as decisões sobre o tratamento. <em>No presente caso: Valoro Invest.</em></td></tr>
+              <tr><td><strong>Titular</strong></td><td>Pessoa natural a quem se referem os dados pessoais.</td></tr>
+              <tr><td><strong>ANPD</strong></td><td>Autoridade Nacional de Proteção de Dados — órgão regulador da LGPD.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section>
+          <h3><span class="lm-num">3</span> Dados Pessoais que Coletamos</h3>
+          <p>Coletamos apenas os dados estritamente necessários para cada finalidade (princípio da <strong>minimização</strong>, art. 6º, III, LGPD):</p>
+          <table>
+            <thead><tr><th>Categoria</th><th>Dados coletados</th><th>Canal</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Identificação e contato</strong></td><td>Nome, e-mail, WhatsApp/telefone</td><td>Formulário "Fale com um Especialista"</td></tr>
+              <tr><td><strong>Mensagem e perfil</strong></td><td>Mensagem descritiva da necessidade financeira (campo livre)</td><td>Formulário de contato</td></tr>
+              <tr><td><strong>Newsletter</strong></td><td>Endereço de e-mail</td><td>Formulário de inscrição</td></tr>
+              <tr><td><strong>Navegação</strong></td><td>IP anonimizado, tipo de dispositivo, navegador, páginas visitadas</td><td>Cookies (ver §8)</td></tr>
+              <tr><td><strong>Dados regulatórios de clientes</strong></td><td>CPF/CNPJ, dados financeiros, perfil de investidor (suitability)</td><td>Onboarding — coletados pela Nord Bankers (Res. CVM 19/2021)</td></tr>
+            </tbody>
+          </table>
+          <div class="lm-notice warning"><i class="fas fa-exclamation-triangle"></i><span><strong>Não coletamos dados sensíveis</strong> por meio deste site. Dados financeiros de clientes são tratados diretamente pela plataforma regulada da Nord Bankers.</span></div>
+        </section>
+
+        <section>
+          <h3><span class="lm-num">4</span> Finalidades do Tratamento e Bases Legais</h3>
+          <table>
+            <thead><tr><th>Finalidade</th><th>Base Legal (LGPD)</th><th>Dados utilizados</th></tr></thead>
+            <tbody>
+              <tr><td>Responder à solicitação de contato</td><td>Consentimento (art. 7º, I) / Execução de contrato (art. 7º, V)</td><td>Nome, e-mail, telefone, mensagem</td></tr>
+              <tr><td>Envio de newsletter</td><td>Consentimento (art. 7º, I) — revogável a qualquer tempo</td><td>E-mail</td></tr>
+              <tr><td>Cumprimento de obrigações legais (CVM, BACEN, COAF)</td><td>Obrigação legal ou regulatória (art. 7º, II)</td><td>Dados de identificação e financeiros</td></tr>
+              <tr><td>Prevenção à Lavagem de Dinheiro (PLD/FT)</td><td>Obrigação legal (art. 7º, II)</td><td>CPF/CNPJ, informações financeiras</td></tr>
+              <tr><td>Análise de perfil do investidor (suitability)</td><td>Execução de contrato (art. 7º, V) + Obrigação regulatória</td><td>Dados financeiros, objetivos, tolerância ao risco</td></tr>
+              <tr><td>Segurança do site e prevenção de fraudes</td><td>Legítimo interesse (art. 7º, IX)</td><td>IP anonimizado, logs de acesso</td></tr>
+            </tbody>
+          </table>
+          <div class="lm-notice success"><i class="fas fa-check-circle"></i><span>A Valoro Invest <strong>não vende, não aluga e não comercializa</strong> dados pessoais a terceiros para fins de marketing ou publicidade.</span></div>
+        </section>
+
+        <section>
+          <h3><span class="lm-num">5</span> Compartilhamento de Dados com Terceiros</h3>
+          <p>Os dados poderão ser compartilhados com: <strong>Nord Bankers Consultoria Ltda.</strong> (parceira operacional regulada pela CVM); <strong>plataformas de corretagem parceiras</strong> (XP, BTG Pactual, Safra, Avenue Securities, Interactive Brokers e outras); <strong>prestadores de TI</strong> (hospedagem, e-mail, CRM) como Operadores sujeitos a contratos com cláusulas de proteção de dados; <strong>autoridades governamentais e reguladoras</strong> (CVM, BACEN, COAF, Receita Federal) quando exigido por lei; e <strong>auditores e consultores jurídicos</strong> em cumprimento a obrigações legais.</p>
+        </section>
+
+        <section>
+          <h3><span class="lm-num">6</span> Prazo de Retenção dos Dados</h3>
+          <table>
+            <thead><tr><th>Dado / Categoria</th><th>Prazo</th><th>Fundamento</th></tr></thead>
+            <tbody>
+              <tr><td>Formulário de contato (leads)</td><td>5 anos após o último contato</td><td>Art. 205 do Código Civil</td></tr>
+              <tr><td>Assinaturas de newsletter</td><td>Até revogação do consentimento + 6 meses</td><td>Art. 7º, I, LGPD</td></tr>
+              <tr><td>Registros de operações e contratos de consultoria</td><td>10 anos</td><td>Art. 11, Res. CVM 19/2021</td></tr>
+              <tr><td>Dados de PLD/FT (KYC)</td><td>10 anos</td><td>Art. 10, Lei nº 9.613/1998</td></tr>
+              <tr><td>Logs de segurança do site</td><td>6 meses</td><td>Art. 15, Marco Civil da Internet</td></tr>
+              <tr><td>Dados fiscais e contábeis</td><td>5 anos</td><td>Art. 173 do CTN</td></tr>
+            </tbody>
+          </table>
+          <p>Findo o prazo, os dados serão <strong>eliminados de forma segura ou anonimizados</strong>, salvo obrigação legal de conservação adicional.</p>
+        </section>
+
+        <section>
+          <h3><span class="lm-num">7</span> Segurança da Informação</h3>
+          <p>A Valoro Invest adota medidas técnicas e organizacionais para proteger os dados pessoais:</p>
+          <ul>
+            <li><strong>Criptografia em trânsito:</strong> protocolo TLS 1.2 ou superior (HTTPS);</li>
+            <li><strong>Controle de acesso:</strong> painel administrativo com autenticação em duas etapas (2FA-TOTP);</li>
+            <li><strong>Armazenamento seguro:</strong> senhas em hash com PBKDF2 (SHA-256), nunca em texto puro;</li>
+            <li><strong>Logs de auditoria:</strong> registros de todas as tentativas de acesso ao painel;</li>
+            <li><strong>Minimização de exposição:</strong> dados sensíveis não são transmitidos no frontend público.</li>
+          </ul>
+          <div class="lm-notice warning"><i class="fas fa-exclamation-triangle"></i><span>Em caso de incidente de segurança com risco relevante aos titulares, a Valoro Invest comunicará a ANPD e os afetados em até <strong>72 horas</strong> (art. 48 da LGPD e Resolução CD/ANPD nº 15/2024).</span></div>
+        </section>
+
+        <section>
+          <h3><span class="lm-num">8</span> Cookies e Tecnologias de Rastreamento</h3>
+          <table>
+            <thead><tr><th>Tipo</th><th>Finalidade</th><th>Requer consentimento?</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Essenciais / Técnicos</strong></td><td>Funcionamento básico do site</td><td>Não (legítimo interesse)</td></tr>
+              <tr><td><strong>Analíticos</strong></td><td>Medição de audiência (ex.: Google Analytics anonimizado)</td><td>Sim — consentimento explícito</td></tr>
+              <tr><td><strong>Marketing</strong></td><td>Personalização e retargeting</td><td>Sim — consentimento explícito</td></tr>
+            </tbody>
+          </table>
+          <p>O usuário pode gerenciar ou revogar o consentimento para cookies não essenciais pelas configurações do navegador. A revogação não prejudica a licitude do tratamento anterior.</p>
+        </section>
+
+        <section>
+          <h3><span class="lm-num">9</span> Seus Direitos como Titular (LGPD, art. 18)</h3>
+          <p>O titular possui os seguintes direitos, exercíveis a qualquer tempo: <strong>confirmação e acesso</strong> aos seus dados; <strong>correção</strong> de dados incompletos ou desatualizados; <strong>eliminação</strong> de dados tratados com base em consentimento; <strong>oposição / bloqueio</strong> de tratamento em desconformidade com a LGPD; <strong>revogação do consentimento</strong> a qualquer momento sem custo; <strong>portabilidade</strong> dos dados a outro fornecedor; <strong>informação</strong> sobre terceiros com quem compartilhamos os dados; e <strong>revisão</strong> de decisões tomadas exclusivamente por meios automatizados.</p>
+          <p>As solicitações serão respondidas em até <strong>15 dias corridos</strong>. Caso não atendidas de forma satisfatória, o titular pode reclamar à <a href="https://www.gov.br/anpd" target="_blank" rel="noopener noreferrer">ANPD (gov.br/anpd)</a>.</p>
+        </section>
+
+        <section>
+          <h3><span class="lm-num">10</span> Transferência Internacional de Dados</h3>
+          <p>Para clientes com investimentos no exterior (ex.: Avenue Securities ou Interactive Brokers), dados poderão ser transferidos para jurisdições fora do Brasil apenas quando o país destinatário proporcionar proteção adequada à LGPD, houver cláusulas contratuais com garantias suficientes, ou com consentimento específico do titular (art. 33, LGPD).</p>
+        </section>
+
+        <section>
+          <h3><span class="lm-num">11</span> Menores de Idade</h3>
+          <p>Os serviços da Valoro Invest destinam-se exclusivamente a <strong>pessoas maiores de 18 anos</strong>. Não coletamos intencionalmente dados de menores. Caso identificados, os dados serão imediatamente eliminados. Situações envolvendo planejamento patrimonial ou sucessório de menores serão tratadas diretamente com os responsáveis legais (art. 14 da LGPD).</p>
+        </section>
+
+        <section>
+          <h3><span class="lm-num">12</span> Obrigações Regulatórias Específicas</h3>
+          <p>A Valoro Invest opera no contexto regulatório do mercado de capitais, sujeito às normas: <strong>Resolução CVM nº 19/2021</strong> (atividade de consultor de valores mobiliários); <strong>Resolução CVM nº 30/2021</strong> (verificação do perfil de investidor); <strong>Lei nº 9.613/1998</strong> (PLD/FT); <strong>ANBIMA — Código de Conduta Profissional</strong>; e <strong>Lei Complementar nº 105/2001</strong> (sigilo bancário e financeiro).</p>
+          <div class="lm-notice info"><i class="fas fa-shield-alt"></i><span>O <strong>sigilo das informações financeiras</strong> dos clientes é uma obrigação legal. Sua violação pode configurar crime nos termos da LC nº 105/2001.</span></div>
+        </section>
+
+        <section>
+          <h3><span class="lm-num">13</span> Alterações desta Política de Privacidade</h3>
+          <p>Esta Política poderá ser atualizada periodicamente. Alterações <strong>substanciais</strong> serão comunicadas aos titulares cadastrados por e-mail ou aviso no site com antecedência mínima de <strong>15 dias corridos</strong>. O uso continuado após as alterações implica concordância com a nova versão.</p>
+        </section>
+
+        <section>
+          <h3><span class="lm-num">14</span> Contato, Encarregado (DPO) e Canal de Atendimento</h3>
+          <p>Para exercer seus direitos ou reportar incidentes relacionados à privacidade, entre em contato com o <strong>Encarregado de Proteção de Dados (DPO)</strong> da Valoro Invest:</p>
+          <div class="lm-reg">
+            <p><strong>Valoro Invest Consultoria de Investimentos Ltda.</strong></p>
+            <p>E-mail: <a href="mailto:privacidade@valoroinvest.com.br" style="color:#63b3ed;">privacidade@valoroinvest.com.br</a></p>
+            <p>Telefone: <a href="tel:+5511993288109" style="color:#63b3ed;">(11) 99328-8109</a></p>
+            <p>Endereço: R. Place des Vosges, 88 – Sala 206, Souzas, Campinas/SP – CEP 13105-825</p>
+            <p style="font-size:0.8rem;color:rgba(255,255,255,0.75);margin-top:0.5rem;">Prazo de resposta: até 15 dias corridos. Solicitações complexas podem ser prorrogadas por igual período, com comunicação prévia.</p>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ── BOTÃO FLUTUANTE WHATSAPP ── -->
+  <a href="https://wa.me/5511993288109" target="_blank" rel="noopener noreferrer" class="whatsapp-fab" aria-label="Falar pelo WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script src="js/main.js"></script>
+  <script src="js/cookie-consent.js"></script>
+
+</body>
+</html>

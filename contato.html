@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fale com um Especialista · Valoro Invest</title>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.google.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https://www.gstatic.com; connect-src https://script.google.com https://script.googleusercontent.com https://www.google.com; frame-src https://www.google.com;" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="DENY" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://www.google.com/recaptcha/api.js?render=6LcCregsAAAAAALDuQ62N5zcGJCfjP3w4c4yZdo8" async defer></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { height: 100%; overflow-x: hidden; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      width: 100%;
+      overflow-x: hidden;
+    }
+
+    /* ── HEADER ── */
+    .header {
+      background: #fff;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,.1);
+      width: 100%;
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1496px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+
+    .logo { display: flex; align-items: center; gap: 16px; text-decoration: none; }
+    .logo-valoro-img { height: 46px; width: auto; }
+    .logo-nord-img   { height: 56px; width: auto; }
+    .logo-divider    { width: 1px; height: 36px; background: #d5d9de; }
+
+    .nav-menu { display: flex; list-style: none; gap: 1.5rem; align-items: center; }
+
+    .nav-link {
+      color: #4a5568;
+      text-decoration: none;
+      font-size: .9rem;
+      font-weight: 500;
+      transition: color .2s;
+    }
+
+    .nav-link:hover { color: #1a4fa0; }
+
+    .nav-back {
+      color: #4a5568;
+      text-decoration: none;
+      font-size: .9rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      transition: color .2s;
+    }
+    .nav-back:hover { color: #1a4fa0; }
+
+    /* ── SEÇÃO PRINCIPAL ── */
+    .contato-section {
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      padding: 4rem 0 3rem;
+      flex: 1;
+    }
+
+    .contato-container { max-width: 1400px; margin: 0 auto; padding: 0 48px; }
+
+    .contato-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 4rem;
+      align-items: stretch;
+    }
+
+    /* ── COLUNA ESQUERDA ── */
+    .contato-info-col {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .contato-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #1a365d;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .contato-subtitle {
+      font-size: 1.05rem;
+      color: #4a5568;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    .contato-beneficios { margin-bottom: 2rem; }
+
+    .beneficio-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .beneficio-icon {
+      width: 28px;
+      height: 28px;
+      background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: .8rem;
+      flex-shrink: 0;
+    }
+
+    .beneficio-item span { font-size: 1rem; color: #2d3748; font-weight: 500; }
+
+    .contato-direto {
+      background: #fff;
+      padding: 1.75rem;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.06);
+      margin-top: auto;
+    }
+
+    .contato-direto h3 { font-size: 1rem; font-weight: 600; color: #1a365d; margin-bottom: 1rem; }
+
+    .contato-item { display: flex; align-items: center; gap: .75rem; margin-bottom: .75rem; }
+    .contato-item:last-child { margin-bottom: 0; }
+
+    .contato-item i {
+      width: 36px; height: 36px;
+      background: rgba(66,153,225,.1);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: #4299e1; font-size: 1rem; flex-shrink: 0;
+    }
+
+    .contato-item a { color: #4a5568; text-decoration: none; font-size: .95rem; }
+    .contato-item a:hover { color: #1a4fa0; }
+
+    /* ── COLUNA DO FORMULÁRIO ── */
+    .contato-form-col {
+      background: #fff;
+      padding: 2.5rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,.08);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-title { font-size: 1.5rem; font-weight: 700; color: #1a365d; margin-bottom: .4rem; }
+    .form-subtitle { font-size: .9rem; color: #718096; margin-bottom: 1.75rem; }
+
+    .contato-form { display: flex; flex-direction: column; gap: 1.25rem; flex-grow: 1; }
+
+    .form-group { display: flex; flex-direction: column; gap: .4rem; }
+
+    .form-row { display: grid; grid-template-columns: 0.7fr 1fr; gap: 1rem; }
+
+    .form-label {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .85rem;
+      font-weight: 600;
+      color: #2d3748;
+    }
+
+    .form-label i { color: #4299e1; font-size: .85rem; }
+
+    .form-label .req { color: #e53e3e; margin-left: 1px; }
+
+    /* Inputs e selects */
+    .form-input, .form-select, .form-textarea {
+      padding: .8rem 1rem;
+      border: 2px solid #e2e8f0;
+      border-radius: 10px;
+      font-size: .95rem;
+      font-family: inherit;
+      background: #f8fafc;
+      color: #1a2540;
+      transition: border-color .2s, box-shadow .2s, background .2s;
+      outline: none;
+    }
+
+    .form-select {
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%234299e1' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      padding-right: 34px;
+      cursor: pointer;
+    }
+
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: #4299e1;
+      box-shadow: 0 0 0 3px rgba(66,153,225,.12);
+      background: #fff;
+    }
+
+    .form-input::placeholder, .form-textarea::placeholder { color: #a0aec0; }
+
+    .form-input.error, .form-select.error { border-color: #e53e3e; }
+
+    .field-error { font-size: .78rem; color: #e53e3e; display: none; }
+    .field-error.visible { display: block; }
+
+    .form-textarea { resize: vertical; min-height: 110px; line-height: 1.55; }
+
+    /* Telefone */
+    .phone-input-group {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: .65rem;
+    }
+
+    .country-code-select {
+      padding: .8rem .5rem .8rem .75rem;
+      border: 2px solid #e2e8f0;
+      border-radius: 10px;
+      font-size: .85rem;
+      font-family: inherit;
+      background: #f8fafc;
+      color: #1a2540;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%234299e1' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 8px center;
+      padding-right: 26px;
+      cursor: pointer;
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+    }
+
+    .country-code-select:focus {
+      border-color: #4299e1;
+      box-shadow: 0 0 0 3px rgba(66,153,225,.12);
+      background-color: #fff;
+    }
+
+    /* Checkbox customizado */
+    .form-privacy { margin-top: .25rem; }
+
+    .privacy-checkbox {
+      display: flex;
+      align-items: flex-start;
+      gap: .75rem;
+      cursor: pointer;
+      font-size: .85rem;
+      color: #4a5568;
+      line-height: 1.5;
+      user-select: none;
+    }
+
+    .privacy-checkbox input[type="checkbox"] { display: none; }
+
+    .checkmark {
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      border: 2px solid #cbd5e0;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+      transition: border-color .2s, background .2s;
+    }
+
+    .checkmark i { font-size: .65rem; color: #fff; display: none; }
+
+    .privacy-checkbox input:checked ~ .checkmark {
+      background: #4299e1;
+      border-color: #4299e1;
+    }
+
+    .privacy-checkbox input:checked ~ .checkmark i { display: block; }
+
+    .privacy-text a { color: #4299e1; text-decoration: none; }
+    .privacy-text a:hover { text-decoration: underline; }
+
+    .concordo-error { font-size: .78rem; color: #e53e3e; display: none; margin-top: .3rem; }
+    .concordo-error.visible { display: block; }
+
+    /* Botão */
+    .form-submit-btn {
+      background: linear-gradient(135deg, #5aafe8 0%, #3b8fd4 100%);
+      color: #fff;
+      border: none;
+      padding: .9rem 2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      font-family: inherit;
+      border-radius: 10px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .65rem;
+      box-shadow: 0 6px 20px rgba(59,143,212,.35);
+      transition: transform .2s, box-shadow .2s, opacity .2s;
+      margin-top: .25rem;
+    }
+
+    .form-submit-btn:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(59,143,212,.45);
+    }
+
+    .form-submit-btn:disabled { opacity: .65; cursor: not-allowed; }
+
+    .spinner {
+      width: 16px; height: 16px;
+      border: 2px solid rgba(255,255,255,.4);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin .7s linear infinite;
+      display: none;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* Banner de erro */
+    .form-error-banner {
+      display: none;
+      background: #fff5f5;
+      border: 1px solid #fed7d7;
+      color: #c53030;
+      font-size: .85rem;
+      padding: 10px 14px;
+      border-radius: 8px;
+    }
+
+    .form-error-banner.visible { display: block; }
+
+    /* Estado de sucesso */
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+
+    .success-icon {
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #5aafe8 0%, #3b8fd4 100%);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-size: 1.8rem;
+      color: #fff;
+      box-shadow: 0 8px 24px rgba(59,143,212,.35);
+    }
+
+    .form-success h3 { font-size: 1.4rem; font-weight: 700; color: #1a365d; margin-bottom: .75rem; }
+    .form-success p  { color: #718096; margin-bottom: 1.75rem; line-height: 1.6; }
+
+    .btn-voltar {
+      display: inline-block;
+      padding: .75rem 1.75rem;
+      background: linear-gradient(135deg, #5aafe8 0%, #3b8fd4 100%);
+      color: #fff;
+      font-weight: 600;
+      border-radius: 10px;
+      text-decoration: none;
+      box-shadow: 0 6px 20px rgba(59,143,212,.35);
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .btn-voltar:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(59,143,212,.45); }
+
+    /* ── FOOTER ── */
+    .footer-simple {
+      background: #1a365d;
+      padding: 1.5rem 0;
+      border-top: 1px solid rgba(255,255,255,.1);
+      width: 100%;
+    }
+
+    .footer-simple-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1496px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+
+    .footer-logos { display: flex; align-items: center; gap: 16px; }
+    .footer-logos img { width: auto; filter: brightness(0) invert(1); opacity: .85; }
+    .footer-logo-valoro { height: 38px; }
+    .footer-logo-nord   { height: 48px; }
+    .footer-logos .fdivider { width: 1px; height: 28px; background: rgba(255,255,255,.3); }
+
+    .footer-copy { font-size: .85rem; color: rgba(255,255,255,.55); }
+
+    .footer-link { color: rgba(255,255,255,.65); text-decoration: none; font-size: .85rem; }
+    .footer-link:hover { color: #fff; }
+
+    /* ── RESPONSIVO ── */
+    @media (max-width: 1024px) {
+      .contato-grid { grid-template-columns: 1fr; gap: 3rem; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu { display: none; }
+      .nav-back { display: none; }
+      .nav-container { padding: 0 16px; justify-content: center; }
+      .logo-valoro-img { height: 28px; }
+      .logo-nord-img   { height: 34px; }
+      .logo-divider    { height: 22px; }
+      .logo            { gap: 10px; }
+      .footer-logo-valoro { height: 28px; }
+      .footer-logo-nord   { height: 34px; }
+      .footer-logos .fdivider { height: 22px; }
+      .footer-copy        { white-space: nowrap; font-size: 0.68rem; }
+      /* Reordena: info → form → outras formas */
+      .contato-info-col           { display: contents; }
+      .contato-info-col > div:first-child { order: 1; width: 100%; box-sizing: border-box; }
+      .contato-form-col           { order: 2; }
+      .contato-direto             { order: 3; }
+      .contato-section { padding: 2rem 0 1.5rem; }
+      .contato-container { padding: 0 1.25rem; }
+      .contato-grid { width: 100%; box-sizing: border-box; }
+      .contato-title { font-size: 1.5rem; overflow-wrap: break-word; }
+      .contato-subtitle { font-size: 0.85rem; }
+      .beneficio-item span { font-size: 0.85rem; }
+      .contato-direto { width: 100%; box-sizing: border-box; padding: 1.25rem; }
+      .contato-item a { font-size: 0.8rem; overflow-wrap: break-word; word-break: break-all; }
+      .contato-form-col { padding: 1.25rem; width: 100%; box-sizing: border-box; }
+      .form-title { font-size: 1.2rem; }
+      .form-subtitle { font-size: 0.82rem; }
+      .form-label { font-size: 0.8rem; }
+      .form-input, .form-select, .form-textarea, .country-code-select { width: 100%; max-width: 100%; font-size: 0.88rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .phone-input-group { grid-template-columns: 72px 1fr; }
+      .privacy-checkbox { font-size: 0.8rem; }
+      .footer-simple-content { flex-direction: column; gap: .75rem; text-align: center; padding: 0 16px; }
+    }
+    .whatsapp-fab {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 9999;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #25d366;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.75rem;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+    }
+    .whatsapp-fab:hover { transform: scale(1.1); box-shadow: 0 6px 22px rgba(0,0,0,0.32); }
+    @media (max-width: 480px) {
+      .whatsapp-fab { bottom: 20px; right: 16px; width: 50px; height: 50px; font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <nav class="nav-container">
+      <a href="index.html" class="logo">
+        <img src="Logos-Nord-Valoro/logo.png" alt="Valoro Invest" class="logo-valoro-img" />
+        <div class="logo-divider"></div>
+        <img src="Logos-Nord-Valoro/logo-nord.jpeg" alt="Nord Wealth" class="logo-nord-img" />
+      </a>
+      <a href="index.html" class="nav-back">
+        <i class="fas fa-arrow-left"></i> Ir para o site
+      </a>
+    </nav>
+  </header>
+
+  <!-- CONTEÚDO -->
+  <section class="contato-section">
+    <div class="contato-container">
+      <div class="contato-grid">
+
+        <!-- COLUNA ESQUERDA: informações -->
+        <div class="contato-info-col">
+          <div>
+            <h1 class="contato-title">Fale com um Especialista</h1>
+            <p class="contato-subtitle">
+              Preencha o formulário e nossa equipe entrará em contato em breve
+              para entender suas necessidades e apresentar as melhores soluções
+              para o seu patrimônio.
+            </p>
+
+            <div class="contato-beneficios">
+              <div class="beneficio-item">
+                <div class="beneficio-icon"><i class="fas fa-check"></i></div>
+                <span>Atendimento personalizado</span>
+              </div>
+              <div class="beneficio-item">
+                <div class="beneficio-icon"><i class="fas fa-check"></i></div>
+                <span>Resposta em até 24 horas</span>
+              </div>
+              <div class="beneficio-item">
+                <div class="beneficio-icon"><i class="fas fa-check"></i></div>
+                <span>Consulta sem compromisso</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contato-direto">
+            <h3>Outras formas de contato</h3>
+            <div class="contato-item">
+              <i class="fab fa-whatsapp"></i>
+              <a href="https://wa.me/5511993288109" target="_blank" rel="noopener noreferrer">(11) 99328-8109</a>
+            </div>
+            <div class="contato-item">
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:contato@valoroinvest.com.br">contato@valoroinvest.com.br</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- COLUNA DIREITA: formulário -->
+        <div class="contato-form-col">
+
+          <div id="formState">
+            <h2 class="form-title">Deixe seus dados</h2>
+            <p class="form-subtitle">Em breve um especialista entrará em contato com você.</p>
+
+            <div class="form-error-banner" id="errorBanner">
+              Ocorreu um erro ao enviar. Por favor, tente novamente.
+            </div>
+
+            <form class="contato-form" id="contactForm" novalidate>
+
+              <!-- Honeypot anti-bot: invisível para humanos, bots preenchem -->
+              <input type="text" name="_hp" id="_hp" tabindex="-1" autocomplete="off"
+                style="position:absolute;left:-9999px;opacity:0;height:0;width:0;pointer-events:none;" aria-hidden="true" />
+
+              <!-- Nome -->
+              <div class="form-group">
+                <label for="nome" class="form-label">
+                  <i class="fas fa-user"></i> Nome completo <span class="req">*</span>
+                </label>
+                <input type="text" id="nome" name="nome" class="form-input" placeholder="Seu nome completo" autocomplete="name" />
+                <span class="field-error" id="nomeError">Por favor, informe seu nome.</span>
+              </div>
+
+              <!-- Email (linha própria) -->
+              <div class="form-group">
+                <label for="email" class="form-label">
+                  <i class="fas fa-envelope"></i> E-mail <span class="req">*</span>
+                </label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="seu@email.com" autocomplete="email" />
+                <span class="field-error" id="emailError">E-mail inválido.</span>
+              </div>
+
+              <!-- Telefone + Patrimônio (lado a lado) -->
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">
+                    <i class="fab fa-whatsapp"></i> WhatsApp <span class="req">*</span>
+                  </label>
+                  <div class="phone-input-group">
+                    <select id="codigoPais" name="codigoPais" class="country-code-select" aria-label="Código do país">
+                      <option value="+55" selected>Brasil (+55)</option>
+                      <option value="+1">EUA (+1)</option>
+                      <option disabled>──────────</option>
+                      <option value="+7">Rússia (+7)</option>
+                      <option value="+20">Egito (+20)</option>
+                      <option value="+27">África do Sul (+27)</option>
+                      <option value="+30">Grécia (+30)</option>
+                      <option value="+31">Países Baixos (+31)</option>
+                      <option value="+32">Bélgica (+32)</option>
+                      <option value="+33">França (+33)</option>
+                      <option value="+34">Espanha (+34)</option>
+                      <option value="+36">Hungria (+36)</option>
+                      <option value="+39">Itália (+39)</option>
+                      <option value="+40">Romênia (+40)</option>
+                      <option value="+41">Suíça (+41)</option>
+                      <option value="+43">Áustria (+43)</option>
+                      <option value="+44">Reino Unido (+44)</option>
+                      <option value="+45">Dinamarca (+45)</option>
+                      <option value="+46">Suécia (+46)</option>
+                      <option value="+47">Noruega (+47)</option>
+                      <option value="+48">Polônia (+48)</option>
+                      <option value="+49">Alemanha (+49)</option>
+                      <option value="+51">Peru (+51)</option>
+                      <option value="+52">México (+52)</option>
+                      <option value="+54">Argentina (+54)</option>
+                      <option value="+56">Chile (+56)</option>
+                      <option value="+57">Colômbia (+57)</option>
+                      <option value="+58">Venezuela (+58)</option>
+                      <option value="+61">Austrália (+61)</option>
+                      <option value="+62">Indonésia (+62)</option>
+                      <option value="+64">Nova Zelândia (+64)</option>
+                      <option value="+65">Singapura (+65)</option>
+                      <option value="+81">Japão (+81)</option>
+                      <option value="+82">Coreia do Sul (+82)</option>
+                      <option value="+86">China (+86)</option>
+                      <option value="+90">Turquia (+90)</option>
+                      <option value="+91">Índia (+91)</option>
+                      <option value="+92">Paquistão (+92)</option>
+                      <option value="+244">Angola (+244)</option>
+                      <option value="+258">Moçambique (+258)</option>
+                      <option value="+351">Portugal (+351)</option>
+                      <option value="+352">Luxemburgo (+352)</option>
+                      <option value="+353">Irlanda (+353)</option>
+                      <option value="+358">Finlândia (+358)</option>
+                      <option value="+380">Ucrânia (+380)</option>
+                      <option value="+420">Rep. Tcheca (+420)</option>
+                      <option value="+501">Belize (+501)</option>
+                      <option value="+502">Guatemala (+502)</option>
+                      <option value="+506">Costa Rica (+506)</option>
+                      <option value="+507">Panamá (+507)</option>
+                      <option value="+591">Bolívia (+591)</option>
+                      <option value="+593">Equador (+593)</option>
+                      <option value="+595">Paraguai (+595)</option>
+                      <option value="+597">Suriname (+597)</option>
+                      <option value="+598">Uruguai (+598)</option>
+                      <option value="+852">Hong Kong (+852)</option>
+                      <option value="+880">Bangladesh (+880)</option>
+                      <option value="+960">Maldivas (+960)</option>
+                      <option value="+961">Líbano (+961)</option>
+                      <option value="+966">Arábia Saudita (+966)</option>
+                      <option value="+971">Emirados Árabes (+971)</option>
+                      <option value="+972">Israel (+972)</option>
+                      <option value="+974">Catar (+974)</option>
+                      <option value="+994">Azerbaijão (+994)</option>
+                      <option value="+995">Geórgia (+995)</option>
+                    </select>
+                    <input type="tel" id="telefone" name="telefone" class="form-input" placeholder="(00) 00000-0000" autocomplete="tel-national" />
+                  </div>
+                  <span class="field-error" id="telefoneError">Por favor, informe seu telefone.</span>
+                </div>
+
+                <div class="form-group">
+                  <label for="patrimonio" class="form-label">
+                    <i class="fas fa-chart-pie"></i> Faixa de patrimônio <span class="req">*</span>
+                  </label>
+                  <select id="patrimonio" name="patrimonio" class="form-select" autocomplete="off">
+                    <option value="">Selecione uma faixa...</option>
+                    <option value="Até R$ 300 mil">Até R$ 300 mil</option>
+                    <option value="R$ 300 mil – R$ 500 mil">R$ 300 mil – R$ 500 mil</option>
+                    <option value="R$ 500 mil – R$ 1 milhão">R$ 500 mil – R$ 1 milhão</option>
+                    <option value="R$ 1M – R$ 3 milhões">R$ 1M – R$ 3 milhões</option>
+                    <option value="R$ 3M – R$ 10 milhões">R$ 3M – R$ 10 milhões</option>
+                    <option value="Acima de R$ 10 milhões">Acima de R$ 10 milhões</option>
+                  </select>
+                  <span class="field-error" id="patrimonioError">Por favor, selecione uma faixa.</span>
+                </div>
+              </div>
+
+              <!-- Mensagem -->
+              <div class="form-group">
+                <label for="mensagem" class="form-label">
+                  <i class="fas fa-comment-alt"></i> Como podemos ajudar?
+                </label>
+                <textarea id="mensagem" name="mensagem" class="form-textarea" rows="4" placeholder="Descreva brevemente sua situação ou o que está buscando..."></textarea>
+              </div>
+
+              <!-- Checkbox privacidade -->
+              <div class="form-privacy">
+                <label class="privacy-checkbox">
+                  <input type="checkbox" id="concordo" name="concordo" />
+                  <span class="checkmark"><i class="fas fa-check"></i></span>
+                  <span class="privacy-text">
+                    Concordo com a <a href="privacidade.html" target="_blank" rel="noopener noreferrer">Política de Privacidade</a>
+                    e autorizo o uso dos meus dados para contato.
+                  </span>
+                </label>
+                <span class="concordo-error" id="concordoError">Você precisa aceitar os termos para continuar.</span>
+              </div>
+
+              <p style="font-size:.75rem;color:#a0aec0;line-height:1.5;margin-top:-.25rem;">
+                Este site é protegido pelo reCAPTCHA do Google.
+                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" style="color:#4299e1;">Política de Privacidade</a>
+                e <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" style="color:#4299e1;">Termos de Serviço</a> aplicam-se.
+              </p>
+
+              <button type="submit" class="form-submit-btn" id="submitBtn">
+                <span id="btnText">Enviar mensagem</span>
+                <span class="spinner" id="spinner"></span>
+                <i class="fas fa-paper-plane" id="btnIcon"></i>
+              </button>
+
+            </form>
+          </div>
+
+          <!-- SUCESSO -->
+          <div class="form-success" id="successState">
+            <div class="success-icon"><i class="fas fa-check"></i></div>
+            <h3>Mensagem enviada!</h3>
+            <p>Recebemos seus dados. Em breve um de nossos especialistas entrará em contato com você.</p>
+            <a href="index.html" class="btn-voltar">Voltar ao site</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer-simple">
+    <div class="footer-simple-content">
+      <div class="footer-logos">
+        <img src="Logos-Nord-Valoro/logo-valoro-branco.png" alt="Valoro Invest" class="footer-logo-valoro" />
+        <div class="fdivider"></div>
+        <img src="Logos-Nord-Valoro/logo-nord-branco.png" alt="Nord Wealth" class="footer-logo-nord" />
+      </div>
+      <p class="footer-copy">© 2026 Valoro Invest. Todos os direitos reservados.</p>
+      <a href="index.html" class="footer-link">Voltar ao site</a>
+    </div>
+  </footer>
+
+  <!-- ── BOTÃO FLUTUANTE WHATSAPP ── -->
+  <a href="https://wa.me/5511993288109" target="_blank" rel="noopener noreferrer" class="whatsapp-fab" aria-label="Falar pelo WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script src="js/contato.js"></script>
+  <script src="js/cookie-consent.js"></script>
+
+</body>
+</html>
